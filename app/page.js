@@ -1,4 +1,5 @@
 import Hero from "@components/Hero"
+import PopularCateg from "@components/PopularCateg"
 const Home = () => {
   return (
     <section className='w-full flex-center flex-col'>
@@ -11,6 +12,7 @@ const Home = () => {
     Stort urval av armband, ringar💍, halsband, örhängen och andra accessoarer👑 
     </p>
     <Hero />
+    <PopularCateg />
     </section>
   )
 }

@@ -3,7 +3,7 @@ import '../components/NavComp'
 import Provider from '@components/Provider';
 import NavComp from '../components/NavComp';
 import TopNav from '@components/TopNav';
-
+import FooterComp from '@components/FooterComp';
 export const metadata = {
   title: "SmyckesButiken",
   description: "Smycken - Örhängen, Halsband & Armband Billigt!",
@@ -18,6 +18,7 @@ export default function RootLayout({ children }) {
         <NavComp />
           {children}
         </div>
+          <FooterComp />
       </body>
     </html>
   );

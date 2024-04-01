@@ -27,7 +27,7 @@ fetchProviders()
   return (
     <nav className='flex-between w-full mb-16 pt-3'>
       <FaBars />
-<h2>Louie & co</h2>
+<h2>Smyckes Butiken</h2>
         <div className='flex-between space-x-5'>
         <FaRegUser />
         <BsBag />
