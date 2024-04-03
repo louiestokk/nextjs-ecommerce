@@ -4,9 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
+/* Nav */
 .top-nav{
   background: #f19391;
   height: 41px;
@@ -21,6 +19,63 @@
 .addicon{
   color: white;
 }
+
+/* Products */
+.products-container{
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+
+}
+
+.product{
+  background-color: red;
+  height: 100%;
+  width: 140px;
+}
+
+.product-name{
+  white-space: nowrap; 
+  width: 170px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Footer */
+footer{
+  min-height: 340px;
+  margin-top: 2rem;
+  padding: 1.4rem;
+  background-color: #5e1220;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.icons-container{
+  display: flex;
+  padding: 0.5rem;
+}
+.footer-icons{
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+
+
+/* screens */
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+.container{
+  width: 100%;
+  
+}
+
+
 .gradient {
   height: fit-content;
   z-index: 3;
@@ -46,36 +101,6 @@
   opacity: 0.15;
 }
 
-footer{
-  min-height: 340px;
-  margin-top: 2rem;
-  padding: 1.4rem;
-  background-color: #5e1220;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-}
-
-.icons-container{
-  display: flex;
-  padding: 0.5rem;
-}
-.footer-icons{
-  margin: 1rem;
-  font-size: 2.5rem;
-}
-
-@media screen and (max-width: 640px) {
-  .main {
-    padding: 0;
-  }
-}
-.container{
-  width: 100%;
-  
-}
 
 /* Tailwind Styles */
 
