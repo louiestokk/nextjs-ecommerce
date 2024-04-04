@@ -25,12 +25,12 @@ const [toggleDropDown, setToggleDropDown] = useState(false)
 fetchProviders()
   },[])
   return (
-    <nav className='flex-between w-full mb-16 pt-3'>
+    <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem'}}>
       <FaBars />
 <h2>Smyckes Butiken</h2>
-        <div className='flex-between space-x-5'>
+        <div style={{display:'flex',alignItems:'center'}}>
         <FaRegUser />
-        <BsBag />
+        <BsBag style={{marginLeft:'0.75rem'}}/>
         </div>
 {/*    
       <Link href='/' className='flex gap-2 flex-center'>
