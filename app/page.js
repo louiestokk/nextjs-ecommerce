@@ -1,10 +1,26 @@
+'use client'
+
+import React,{useState,useEffect} from 'react'
 import Hero from "@components/Hero"
-import PopularCateg from "@components/PopularCateg"
 import Products from "@components/Products"
 import NewProducts from "@components/NewProducts"
+
 const Home = () => {
+  const [allProducts, setAllProducts] = useState([])
+  const fetchProducts = async()=>{
+    try {
+      const resp = await fetch('/api/products')
+      const data = await resp.json()
+      setAllProducts(data.products)
+    } catch (error) {
+      
+    }
+  }
+  useEffect(()=>{
+fetchProducts()
+  },[])
   return (
-    <section className='w-full flex-center flex-col'>
+    <section className='w-full flex-col'>
         <h1 className='head_text text-center'>
       Smyckes Butiken💍
       <br className='max-md:hidden' />
@@ -15,8 +31,7 @@ const Home = () => {
     </p> */}
     <Hero />
     <NewProducts />
-    <Products />
-    <PopularCateg />
+    <Products products={allProducts} title={'Populära produkter'}/>
     </section>
   )
 }
