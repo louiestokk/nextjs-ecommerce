@@ -80,7 +80,7 @@ object-fit: cover;
 }
 /* Products */
 .products-container{
-  height: 280px;
+  height: 340px;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -92,10 +92,10 @@ object-fit: cover;
 }
 .product{
   cursor: pointer;
-  height: 240px;
-  width: 180px;
+  height: 320px;
+  width: 220px;
 padding: 1rem;
-margin: 0 0.35rem;
+ margin: 0rem 0.35rem;
 box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 border-radius: 5px;
 }
@@ -108,24 +108,65 @@ border-radius: 5px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  margin: 0.5rem 0rem;
-  
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
 }
+
+.product-img{
+  width: 100%;
+  object-fit: cover;
+}
+
 .product-price{
   font-family: "Poppins", sans-serif;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
   letter-spacing: 0.5px;
+  font-size: 1.2rem;
+  color: #FB6D48;
 }
 .product-category{
   font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-style: normal;
-margin-top: 0.5rem;
 }
 
 .populara-produkter{
   font-family: "Dongle", sans-serif;
   padding: 1rem;
+}
+
+/* reviews */
+.stars-container{
+  display: flex;
+  align-items: center;
+}
+.stars-container p{
+  font-size: 0.8rem;
+}
+.stars{
+color: #fcce6d;
+font-size: 0.8rem;
+margin-top: 0.15rem;
+margin-right: 0.2rem;
+}
+.stars-item{
+  display: flex;
+  align-items: center;
+}
+
+/* sold today  */
+.sold-today{
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+.sold-today p{
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+  margin-left: 0.2rem;
+}
+.fire{
+  color: #fa6360;
 }
 
 /* Footer */
