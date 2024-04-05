@@ -1,5 +1,4 @@
-
-
+import { GiOstrich } from "react-icons/gi";
 
 // Footer links
 export const footerlinksupport = [
@@ -25,11 +24,15 @@ export const footerlinksmedlem = [
 
 export const footerlinksstore = [
     {
-        title:'Smyckes Butiken',
+        title:'.struts',
+        icon:<GiOstrich/>,
         text:'Blogg',
         text2:'Om oss',
         text3:'Jobba hos oss',
-        text4:'Integritetspolicy'
+        text4:'Integritetspolicy',
+        text5:'Dropshipping',
+        text6:'Affiliate',
+        text7:'API'
        
     }
 ]

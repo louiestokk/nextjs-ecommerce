@@ -149,9 +149,10 @@ const FooterComp = () => {
                 aria-controls={`panel${i}-header`}
                 id={`panel${i}-header`}
               >
-                <Typography variant="h6" fontSize={16}>
-                  {el.title}
+                <Typography variant="h6" fontSize={16} style={{display:'flex',alignItems:'center'}}>
+                  {el.title} {el.icon}
                 </Typography>
+             
               </AccordionSummary>
               <AccordionDetails>
                 <Typography
@@ -200,6 +201,45 @@ const FooterComp = () => {
                 >
                   {el.text4}
                 </Typography>
+              </AccordionDetails>
+              <AccordionDetails>
+                <Typography
+                  variant="subtitle1"
+                  style={{
+                    fontSize: "0.85rem",
+                    lineHeight: "22px",
+                    letterSpacing: "1px"
+                  }}
+                >
+                  {el.text5}
+                </Typography>
+                
+              </AccordionDetails>
+              <AccordionDetails>
+                <Typography
+                  variant="subtitle1"
+                  style={{
+                    fontSize: "0.85rem",
+                    lineHeight: "22px",
+                    letterSpacing: "1px"
+                  }}
+                >
+                  {el.text6}
+                </Typography>
+                
+              </AccordionDetails>
+              <AccordionDetails>
+                <Typography
+                  variant="subtitle1"
+                  style={{
+                    fontSize: "0.85rem",
+                    lineHeight: "22px",
+                    letterSpacing: "1px"
+                  }}
+                >
+                  {el.text7}
+                </Typography>
+                
               </AccordionDetails>
             </Accordion>
         ))}
