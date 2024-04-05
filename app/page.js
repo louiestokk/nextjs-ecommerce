@@ -3,7 +3,6 @@
 import React,{useState,useEffect} from 'react'
 import Hero from "@components/Hero"
 import Products from "@components/Products"
-import NewProducts from "@components/NewProducts"
 
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
@@ -21,8 +20,7 @@ fetchProducts()
   },[])
   return (
     <section className='home-root'>
-     <Hero />
-    <NewProducts />
+     <Hero /> 
     <Products products={allProducts} title={'Nytt hos oss'}/>
     </section>
   )
