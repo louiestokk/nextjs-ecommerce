@@ -13,7 +13,7 @@ const ProductCardList = ({data})=>{
 const Products = ({products,title}) => {
   return (
     <div>
-         <h2 style={{fontWeight:'bold',fontSize:'2rem'}} className='populara-produkter'>{title} </h2>
+         <h2 style={{fontWeight:'bold',fontSize:'2.4rem'}} className='populara-produkter'>{title} </h2>
       <ProductCardList data={products}/>
     </div>
   )

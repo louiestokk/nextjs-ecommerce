@@ -23,7 +23,7 @@ fetchProducts()
     <section className='home-root'>
      <Hero />
     <NewProducts />
-    <Products products={allProducts} title={'Populära produkter'}/>
+    <Products products={allProducts} title={'Nytt hos oss'}/>
     </section>
   )
 }
