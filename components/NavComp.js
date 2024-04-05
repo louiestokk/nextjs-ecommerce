@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FaBars } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { BsBag } from "react-icons/bs";
+import { GiOstrich } from "react-icons/gi";
 import {useState,useEffect} from 'react'
 import {signIn,signOut,useSession,getProviders} from 'next-auth/react'
 
@@ -25,9 +26,13 @@ const [toggleDropDown, setToggleDropDown] = useState(false)
 fetchProviders()
   },[])
   return (
-    <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem'}}>
+    <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
       <FaBars />
-<h2>Smyckes Butiken</h2>
+      <divn className='logo-container'>
+      <h2 className='logo-text'>.struts</h2>
+      <GiOstrich className='logo-icon'/>
+      </divn>
+
         <div style={{display:'flex',alignItems:'center'}}>
         <FaRegUser />
         <BsBag style={{marginLeft:'0.75rem'}}/>

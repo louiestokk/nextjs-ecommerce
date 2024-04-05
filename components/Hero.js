@@ -31,8 +31,8 @@ const boxes = [
 ]
 const Hero = () => {
   return (
-    <div className='hero-container'>
-    <img src='/assets/images/everything.png' alt='rea smycken'/>
+    <div className='hero-container' style={{margin:'0 auto'}}>
+    <img src='/assets/images/everything.png' alt='rea smycken' className='hero-main-img'/>
     <div style={{display:'flex',flexDirection:'row',width:'100%',marginTop:'0.5rem'}}>
       <img src='/assets/images/orhangen.png' alt='örhängen rea' className='hero-banner-img'/>
       <img src='/assets/images/ringar.png' alt='ringar rea' className='hero-banner-img'/>
