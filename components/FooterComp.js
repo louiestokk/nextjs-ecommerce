@@ -4,6 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
+import { GiOstrich } from "react-icons/gi";
 import {footerlinksupport} from '../utils/pagelinks'
 import { footerlinksmedlem } from '../utils/pagelinks'
 import { footerlinksstore } from '../utils/pagelinks'
@@ -249,7 +250,11 @@ const FooterComp = () => {
 <FacebookIcon className='footer-icons'/>
 <TelegramIcon className='footer-icons'/>
     </div>
-    <p className='text-xs'>Copyright <span>&copy;</span> {year} Smyckes Butiken</p>
+    <div style={{display:'flex',alignItems:'center'}}>
+    <p className='text-xs'>Copyright <span>&copy;</span> {year} .struts </p>
+    <GiOstrich/>
+    </div>
+ 
     </footer>
   )
 }
