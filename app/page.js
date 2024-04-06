@@ -4,6 +4,7 @@ import React,{useState,useEffect} from 'react'
 import Hero from "@components/Hero"
 import Products from "@components/Products"
 import Popular from '@components/Popular'
+import NewCollection from '@components/NewCollection'
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
   const [loading, setLoading] = useState(false)
@@ -27,6 +28,7 @@ fetchProducts()
     <Products products={allProducts} title={'Nytt hos oss'} loading={loading}/>
     <Popular />
     <Products products={allProducts} title={'Toppsäljare'} loading={loading}/>
+    <NewCollection />
     </section>
   )
 }
