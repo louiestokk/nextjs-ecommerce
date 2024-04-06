@@ -8,6 +8,7 @@
 
 /* Nav */
 body{
+  width: 100%;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -94,6 +95,7 @@ margin: 0 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-top-left-radius: 5px;
  
 }
 .rea-bubble p{
