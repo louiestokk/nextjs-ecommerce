@@ -64,7 +64,6 @@ justify-content: center;
 /* hero */
 .hero-container{
 width: 100%;
-max-width: 1200px;
 }
 .hero-main-img{
  width: 100%;

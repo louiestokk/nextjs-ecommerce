@@ -25,7 +25,7 @@ const productReviws = [
 ]
 
 const ProductCard = ({product}) => {
-const randomNumber = Math.floor(Math.random()*6)
+const randomNumber = Math.floor(Math.random()*5)
   return (
     <div className='product'>
     <img src={`${product?.image?.url}`} alt={product.name} className='product-img'/>
@@ -42,7 +42,7 @@ const randomNumber = Math.floor(Math.random()*6)
      </div>
      <div className='sold-today'>
      <BsFire className='fire'/>
-     <p>{randomNumber} sålda idag</p>
+     <p>{randomNumber+1} sålda idag</p>
      </div>
      <div className='sold-today'>
       <BsTruck style={{color:'rgb(0, 131, 138)',marginTop:'0.2rem',fontSize:'1.1rem'}}/>
