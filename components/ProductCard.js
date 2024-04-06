@@ -34,7 +34,7 @@ const randomNumber = Math.floor(Math.random()*5)
     <img src={`${product?.image?.url}`} alt={product.name} className='product-img'/>
     <div>
     <p className='text-sm font-bold product-price'>{product.price.formatted_with_symbol}</p>
-    <span className='rea-procent'>kr{Math.floor(product.price.raw*1.3)}</span>
+    <span className='rea-procent'>kr{Math.round(product.price.raw*1.3)}</span>
     </div>
     <p className='text-sm product-name'>{product?.name}</p>
      <p className='text-xs product-category'>{product.categories[0].name}</p>
