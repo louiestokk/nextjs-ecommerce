@@ -5,8 +5,10 @@ import Hero from "@components/Hero"
 import Products from "@components/Products"
 import Popular from '@components/Popular'
 import NewCollection from '@components/NewCollection'
+import UtvaldaKategorier from '@components/UtvaldaKategorier'
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
+  const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(false)
   const fetchProducts = async()=>{
     try {
@@ -14,6 +16,7 @@ const Home = () => {
       const resp = await fetch('/api/products')
       const data = await resp.json()
       setAllProducts(data.products)
+      setCategories(data.categories)
       setLoading(false)
     } catch (error) {
       
@@ -29,6 +32,7 @@ fetchProducts()
     <Popular />
     <Products products={allProducts} title={'Toppsäljare'} loading={loading}/>
     <NewCollection />
+    <UtvaldaKategorier categories={categories}/>
     </section>
   )
 }
