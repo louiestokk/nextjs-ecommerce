@@ -1,8 +1,12 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import { FaStar } from "react-icons/fa6";
 import { BsFire } from "react-icons/bs";
 import { BsTruck } from "react-icons/bs";
+import { TbShoppingBagPlus } from "react-icons/tb";
+import commerce from '../lib/commerce'
 const productReviws = [
   {
     stars:5,
@@ -26,6 +30,12 @@ const productReviws = [
 
 const ProductCard = ({product}) => {
 const randomNumber = Math.floor(Math.random()*5)
+
+const addProduct = async(productId)=>{
+  const resp = await commerce.cart.add(productId,1).then((response) => console.log(response))
+  console.log(resp)
+}
+
   return (
     <div className='product'>
     <div className='rea-bubble'>
@@ -33,7 +43,10 @@ const randomNumber = Math.floor(Math.random()*5)
     </div>
     <img src={`${product?.image?.url}`} alt={product.name} className='product-img'/>
     <div>
+    <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
     <p className='text-sm font-bold product-price'>{product.price.formatted_with_symbol}</p>
+    <TbShoppingBagPlus style={{color:'rgb(0, 131, 138',fontSize:'1.5rem',cursor:'pointer'}} onClick={()=>addProduct(product.id)}/>
+    </div>
     <span className='rea-procent'>kr{Math.round(product.price.raw*1.3)}</span>
     </div>
     <p className='text-sm product-name'>{product?.name}</p>

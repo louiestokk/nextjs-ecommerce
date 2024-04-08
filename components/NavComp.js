@@ -7,12 +7,18 @@ import { FaRegUser } from "react-icons/fa";
 import { BsBag } from "react-icons/bs";
 import { GiOstrich } from "react-icons/gi";
 import {useState,useEffect} from 'react'
+import Badge from '@mui/material/Badge';
+import IconButton from '@mui/material/IconButton';
+import { IoMdClose } from "react-icons/io";
 import {signIn,signOut,useSession,getProviders} from 'next-auth/react'
-
+import commerce from '../lib/commerce'
 const NavComp = () => {
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null)
-const [toggleDropDown, setToggleDropDown] = useState(false)
+  const [toggleDropDown, setToggleDropDown] = useState(false)
+  const [userCart, setUserCart] = useState(null)
+  const [showCart, setShowCart] = useState(true)
+
   const fetchProviders = async()=>{
     try {
       const resp = await getProviders()
@@ -22,20 +28,49 @@ const [toggleDropDown, setToggleDropDown] = useState(false)
     }
   }
 
+  const fetchCart = async()=>{
+    try { 
+      const cart = await commerce.cart.retrieve()
+      console.log(cart)
+      setUserCart(cart)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(()=>{
-fetchProviders()
-  },[])
+fetchCart()
+  },[userCart])
   return (
-    <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
+    <>
+     <div className={`${showCart ? "cart-menu show-cart" : "cart-menu"}`}>
+     <div className='cart-title'>
+     <h2>Varukorg</h2>
+     <IconButton onClick={()=>setShowCart(false)}>
+       <IoMdClose/>
+     </IconButton>
+     </div>
+       {userCart?.line_items?.map((el)=>(
+        <div key={el.id}>
+          <img src={el?.image?.url} alt={el.name} style={{width:'50px',height:'50px'}}/>
+        </div>
+       ))}
+      </div>
+         <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
       <FaBars />
-      <divn className='logo-container'>
+      <div className='logo-container'>
       <h2 className='logo-text'>.struts</h2>
       <GiOstrich className='logo-icon'/>
-      </divn>
+      </div>
 
         <div style={{display:'flex',alignItems:'center'}}>
         <FaRegUser />
-        <BsBag style={{marginLeft:'0.75rem'}}/>
+        <IconButton aria-label='cart' onClick={()=> setShowCart(true)}>
+        <Badge badgeContent={userCart?.total_items} color='secondary'>
+        <BsBag style={{marginLeft:'0.75rem'}} />
+        </Badge>
+        </IconButton>
+      
         </div>
 {/*    
       <Link href='/' className='flex gap-2 flex-center'>
@@ -97,6 +132,8 @@ fetchProviders()
         }
       </div> */}
     </nav>
+    </>
+ 
   )
 }
 
