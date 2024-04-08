@@ -35,6 +35,7 @@ body{
   margin-left: 0.2rem;
 }
 .logo-container{
+  padding: 9px;
   background-color: #FB6D48;
   height: 35px;
   display: flex;

@@ -17,7 +17,7 @@ const NavComp = () => {
   const [providers, setProviders] = useState(null)
   const [toggleDropDown, setToggleDropDown] = useState(false)
   const [userCart, setUserCart] = useState(null)
-  const [showCart, setShowCart] = useState(true)
+  const [showCart, setShowCart] = useState(false)
 
   const fetchProviders = async()=>{
     try {

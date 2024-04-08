@@ -6,7 +6,7 @@ import TopNav from '@components/TopNav';
 import FooterComp from '@components/FooterComp';
 
 export const metadata = {
-  title: ".struts - Fynda på nätet - Låga priser & snabb leverans",
+  title: "Fynda på nätet - Låga priser & snabb leverans",
   description: "Billig shopping på nätet. Tryggt, enkelt och billigt. Fynda bland tusentals produkter. Välkommen till .struts - Ditt online köpcenter!",
 };
 
