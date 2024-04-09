@@ -31,7 +31,6 @@ const NavComp = () => {
   const fetchCart = async()=>{
     try { 
       const cart = await commerce.cart.retrieve()
-      console.log(cart)
       setUserCart(cart)
     } catch (error) {
       console.log(error)

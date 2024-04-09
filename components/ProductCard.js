@@ -51,7 +51,8 @@ const addProduct = async(productId)=>{
     <Link href={{
     pathname: `/product/[id]`,
     query: {
-      title: product.id, // should be `title` not `id`
+      item: 'test'
+      
     },
   }}
   as={`/product/${product.id}`}>go to </Link>
