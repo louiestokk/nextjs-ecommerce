@@ -38,11 +38,12 @@ const addProduct = async(productId)=>{
 }
 
   return (
+    
     <div className='product'>
     <div className='rea-bubble'>
       <p>30%</p>
     </div>
-    <img src={`${product?.image?.url}`} alt={product.name} className='product-img'/>
+    <img src={`${product?.image?.url}`} alt={product?.name} className='product-img'/>
     <div>
     <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
     <p className='text-sm font-bold product-price'>{product.price.formatted_with_symbol}</p>
@@ -55,11 +56,11 @@ const addProduct = async(productId)=>{
       
     },
   }}
-  as={`/product/${product.id}`}>go to </Link>
+  as={`/product/${product.id}`}></Link>
     <span className='rea-procent'>kr{Math.round(product.price.raw*1.3)}</span>
     </div>
     <p className='text-sm product-name'>{product?.name}</p>
-     <p className='text-xs product-category'>{product.categories[0].name}</p>
+     <p className='text-xs product-category'>{product?.categories?.[0]?.name}</p>
      <div className='reviews-container'>
     <div className='stars-container'>
     <div className='stars-item'>

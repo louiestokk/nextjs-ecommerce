@@ -141,7 +141,7 @@ margin: 0 0.25rem;
   font-size: 0.8rem;
 }
 .products-container{
-  height: 340px;
+  height: 360px;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -154,7 +154,7 @@ margin: 0 0.25rem;
 .product{
   position: relative;
   cursor: pointer;
-  height: 330px;
+  height: 340px;
   width: 220px;
 padding: 1rem;
  margin: 0rem 0.35rem;
@@ -196,6 +196,7 @@ border-radius: 5px;
   font-family: "Dongle", sans-serif;
   padding: 1rem;
 }
+/* productDetails */
 
 /* reviews */
 .stars-container{
