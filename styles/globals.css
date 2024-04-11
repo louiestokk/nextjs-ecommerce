@@ -197,7 +197,17 @@ border-radius: 5px;
   padding: 1rem;
 }
 /* productDetails */
-
+.product_item{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.product_item img{
+  border-radius: 5px;
+max-width: 294px;
+}
 /* reviews */
 .stars-container{
   display: flex;
