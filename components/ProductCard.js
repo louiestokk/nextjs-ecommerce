@@ -43,6 +43,7 @@ const handleRouting = (e) =>{
   else
   router.push(`/product/${product?.id}`)
 }
+
   return (
     <div className='product' onClick={handleRouting}>
     <div className='rea-bubble'>
