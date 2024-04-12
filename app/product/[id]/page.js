@@ -18,7 +18,7 @@ export default async function ProductDetails({params}){
 
 const product = await getProductDetails(`${params.id}`)
 const productDetails = await product.json()
-
+console.log(params.id)
     return <section>
         <div className='product_item'>
             <img src={productDetails?.product?.image?.url} alt={productDetails?.product?.name} style={{maxHeight:'294px'}}/>
