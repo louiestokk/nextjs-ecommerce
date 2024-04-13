@@ -31,8 +31,8 @@ fetchProductDetails(params.id)
             </div>
            
             <div style={{display:'flex',flexWrap:'wrap'}}>
-            {currentProduct.assets.map((el,i)=>(
-                <div key={el.id} onClick={()=> setItemIndex(i)} style={{cursor:'pointer'}}>                
+            {currentProduct?.assets?.map((el,i)=>(
+                <div key={el.id} onClick={()=> setItemIndex(i)} style={{cursor:'pointer', border: i===itemIndex && '1px solid black'}}>                
                 <img src={el.url}  style={{width:'55px',width:'55px',margin:'0 0.2rem',objectFit:'cover'}}/>
                 </div>
         
