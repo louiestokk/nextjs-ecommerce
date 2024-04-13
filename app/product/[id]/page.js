@@ -3,16 +3,18 @@
 import React,{useState,useEffect} from 'react';
 import commerce from '../../../lib/commerce'
 import { FaStar } from "react-icons/fa6";
-
+import { Oval } from 'react-loader-spinner'
 
 export default function ProductDetails({params}){
 const [itemIndex, setItemIndex] = useState(0)
 const [currentProduct, setCurrentProduct] = useState({})
+const [loading, setLoading] = useState(false)
 const fetchProductDetails =async(productId)=>{
     try {
+        setLoading(true)
         const product = await commerce.products.retrieve(productId)
         setCurrentProduct(product)
-        console.log(product.assets)
+     setLoading(false)
     } catch (error) {
         console.log(error)
     }
@@ -21,7 +23,13 @@ useEffect(()=>{
 fetchProductDetails(params.id)
 },[])
     return <section>
-   
+   {loading && <Oval
+  height="80"
+  width="80"
+  radius="9"
+  color="green"
+  ariaLabel="loading"
+/>}
         <div className='product_item'>
             <img src={currentProduct?.assets?.[itemIndex]?.url} alt={currentProduct?.name} style={{maxHeight:'294px'}}/>
             <div className='product_item_options'>

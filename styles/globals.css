@@ -85,7 +85,7 @@ justify-content: space-between;
 }
 
 .accordion{
-  width: 340px;
+  width: 100%;
   color: white;
   background: transparent;
   border-bottom: 1px solid white;
