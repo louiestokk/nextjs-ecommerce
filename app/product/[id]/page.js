@@ -23,13 +23,15 @@ useEffect(()=>{
 fetchProductDetails(params.id)
 },[])
     return <section>
-   {loading && <Oval
+   {loading &&<div style={{display:'flex',justifyContent:'center'}}>
+    <Oval
   height="80"
   width="80"
   radius="9"
   color="green"
   ariaLabel="loading"
-/>}
+/>
+   </div> }
         <div className='product_item'>
             <img src={currentProduct?.assets?.[itemIndex]?.url} alt={currentProduct?.name} style={{maxHeight:'294px'}}/>
             <div className='product_item_options'>
