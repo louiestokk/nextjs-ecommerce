@@ -1,6 +1,8 @@
 'use client'
 
 import React,{useState,useEffect} from 'react'
+import {useDispatch} from 'react-redux'
+import { isLoading,stopLoading } from '@redux/features/loading/loadingSlice'
 import Hero from "@components/Hero"
 import Products from "@components/Products"
 import Popular from '@components/Popular'
@@ -9,15 +11,15 @@ import UtvaldaKategorier from '@components/UtvaldaKategorier'
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
   const [categories, setCategories] = useState([])
-
+const dispatch = useDispatch()
   const fetchProducts = async()=>{
     try {
-      console.log('loading')
+      dispatch(isLoading())
       const resp = await fetch('/api/products')
       const data = await resp.json()
       setAllProducts(data.products)
       setCategories(data.categories)
-      console.log('stop loading')
+      dispatch(stopLoading())
     } catch (error) {
       
     }
