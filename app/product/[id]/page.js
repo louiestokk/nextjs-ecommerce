@@ -4,11 +4,25 @@ import React,{useState,useEffect} from 'react';
 import commerce from '../../../lib/commerce'
 import { FaStar } from "react-icons/fa6";
 import { Oval } from 'react-loader-spinner'
-
+import { CiSquarePlus } from "react-icons/ci";
+import { CiSquareMinus } from "react-icons/ci";
+import {Button}from '@mui/material'
 export default function ProductDetails({params}){
 const [itemIndex, setItemIndex] = useState(0)
 const [currentProduct, setCurrentProduct] = useState({})
 const [loading, setLoading] = useState(false)
+const [numItems, setNumItems] = useState(1)
+
+const handleAddToCart =(e)=>{
+    if(e.target.parentElement.childNodes[0]?.value===''){
+        alert('Du måste lägga gill minst 1 artikel för att kunna lägga till i varukorgen!')
+        return
+    } else {
+        // resten av koden
+    }
+    
+}
+
 const fetchProductDetails =async(productId)=>{
     try {
         setLoading(true)
@@ -66,8 +80,19 @@ fetchProductDetails(params.id)
         </div>
         <div style={{display:'flex',alignItems:'center',justifyContent:'center'}} >
         <p className='text-sm font-bold product-price text-center'>{currentProduct?.price?.formatted_with_symbol}</p>
-        <span className='rea-procent' style={{marginTop:'0.6rem',marginLeft:'0.3rem'}}>kr{Math.round(currentProduct?.price?.raw*1.3)}</span>
+        {!loading &&         <span className='rea-procent' style={{marginTop:'0.6rem',marginLeft:'0.3rem'}}>kr{Math.round(currentProduct?.price?.raw*1.3)}</span>}
         </div>
-    
+    <div className='add-tocart flex justify-center mt-6'>
+    <div className='numItemsInput' >
+    <input type='text' value={numItems}/>
+    <div className='numsinput-reglage'>
+        <CiSquarePlus className='icon-numsinput'/>
+        <CiSquareMinus className='icon-numsinput'/>
+    </div>
+    </div>
+   
+
+   <Button type='button' variant='contained' style={{background:'#FB6D48'}} onClick={handleAddToCart}>LÄGG TILL KUNDVAGN</Button>
+    </div>
     </section>
 }

@@ -9,15 +9,13 @@ import UtvaldaKategorier from '@components/UtvaldaKategorier'
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
   const [categories, setCategories] = useState([])
-  const [loading, setLoading] = useState(false)
+
   const fetchProducts = async()=>{
     try {
-      setLoading(true)
       const resp = await fetch('/api/products')
       const data = await resp.json()
       setAllProducts(data.products)
       setCategories(data.categories)
-      setLoading(false)
     } catch (error) {
       
     }
@@ -28,9 +26,9 @@ fetchProducts()
   return (
     <section className='home-root'>
      <Hero /> 
-    <Products products={allProducts} title={'Nytt hos oss'} loading={loading}/>
+    <Products products={allProducts} title={'Nytt hos oss'}/>
     <Popular />
-    <Products products={allProducts} title={'Toppsäljare'} loading={loading}/>
+    <Products products={allProducts} title={'Toppsäljare'} />
     <NewCollection />
     <UtvaldaKategorier categories={categories}/>
     </section>
