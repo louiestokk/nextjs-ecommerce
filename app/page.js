@@ -12,10 +12,12 @@ const Home = () => {
 
   const fetchProducts = async()=>{
     try {
+      console.log('loading')
       const resp = await fetch('/api/products')
       const data = await resp.json()
       setAllProducts(data.products)
       setCategories(data.categories)
+      console.log('stop loading')
     } catch (error) {
       
     }

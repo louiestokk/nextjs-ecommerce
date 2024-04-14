@@ -12,12 +12,24 @@ const [itemIndex, setItemIndex] = useState(0)
 const [currentProduct, setCurrentProduct] = useState({})
 const [loading, setLoading] = useState(false)
 const [numItems, setNumItems] = useState(1)
-
-const handleAddToCart =(e)=>{
+const [addingToCart, setaddingToCart] = useState(false)
+const [addedToCart, setaddedToCart] = useState(false)
+const handleAddToCart =async(e)=>{
     if(e.target.parentElement.childNodes[0]?.value===''){
         alert('Du måste lägga gill minst 1 artikel för att kunna lägga till i varukorgen!')
         return
     } else {
+        try {
+            setaddingToCart(true)
+            const resp = await commerce.cart.add(`${params.id}`, numItems)
+            setaddingToCart(false)
+            setaddedToCart(true)
+            setTimeout(()=>{
+        setaddedToCart(false)
+            },2000)
+        } catch (error) {
+            console.log(error)
+        }
         // resten av koden
     }
     
@@ -92,7 +104,7 @@ fetchProductDetails(params.id)
     </div>
    
 
-   <Button type='button' variant='contained' style={{background:'#FB6D48'}} onClick={handleAddToCart}>LÄGG TILL KUNDVAGN</Button>
+   <Button type='button' variant='contained' style={{background:'#FB6D48'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
     </div>
     </section>
 }
