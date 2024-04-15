@@ -10,7 +10,8 @@ import { CiSquarePlus } from "react-icons/ci";
 import { CiSquareMinus } from "react-icons/ci";
 import {Button}from '@mui/material'
 import RelatedProducts from '@components/RelatedProducts';
-
+import ProductDetailsDivider from '@components/ProductDetailsDivider';
+import ProductDetailsAccordion from '@components/ProductDetailsAccordion';
 export default function ProductDetails({params}){
 const [itemIndex, setItemIndex] = useState(0)
 const [currentProduct, setCurrentProduct] = useState({})
@@ -124,5 +125,7 @@ fetchProductDetails(params.id)
         </div>
     </div>
     <RelatedProducts product={currentProduct}/>
+    <ProductDetailsDivider />
+    <ProductDetailsAccordion product={currentProduct}/>
     </section>
 }
