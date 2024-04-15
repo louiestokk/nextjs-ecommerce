@@ -111,15 +111,15 @@ fetchProductDetails(params.id)
     </div>
    
 
-   <Button type='button' variant='contained' style={{background:'#FB6D48',width:'250px'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
+   <Button type='button' variant='contained' style={{background:'#FB6D48',width:'275px'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
     </div>
     {/*  */}
     <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'310px',marginTop:'1rem'}}>
+        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'335px',marginTop:'1rem'}}>
         <FaCheck style={{color:'green',marginRight:'0.5rem'}}/>
             <p style={{fontSize:'0.85rem'}}>Finns i webblager</p>
         </div>
-        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'310px'}}>
+        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'335px'}}>
         <BsTruck style={{color:'green',marginRight:'0.5rem'}}/>
             <p style={{fontSize:'0.85rem'}}> Skickas imorgon</p>
         </div>
