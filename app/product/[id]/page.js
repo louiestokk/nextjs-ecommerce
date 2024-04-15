@@ -3,10 +3,14 @@
 import React,{useState,useEffect} from 'react';
 import commerce from '../../../lib/commerce'
 import { FaStar } from "react-icons/fa6";
+import { BsTruck } from "react-icons/bs";
 import { Oval } from 'react-loader-spinner'
+import { FaCheck } from "react-icons/fa6";
 import { CiSquarePlus } from "react-icons/ci";
 import { CiSquareMinus } from "react-icons/ci";
 import {Button}from '@mui/material'
+import RelatedProducts from '@components/RelatedProducts';
+
 export default function ProductDetails({params}){
 const [itemIndex, setItemIndex] = useState(0)
 const [currentProduct, setCurrentProduct] = useState({})
@@ -14,9 +18,10 @@ const [loading, setLoading] = useState(false)
 const [numItems, setNumItems] = useState(1)
 const [addingToCart, setaddingToCart] = useState(false)
 const [addedToCart, setaddedToCart] = useState(false)
+
 const handleAddToCart =async(e)=>{
     if(e.target.parentElement.childNodes[0]?.value===''){
-        alert('Du måste lägga gill minst 1 artikel för att kunna lägga till i varukorgen!')
+        alert('Du måste lägga till minst 1 artikel för att kunna lägga till i varukorgen!')
         return
     } else {
         try {
@@ -30,7 +35,7 @@ const handleAddToCart =async(e)=>{
         } catch (error) {
             console.log(error)
         }
-        // resten av koden
+        
     }
     
 }
@@ -94,6 +99,7 @@ fetchProductDetails(params.id)
         <p className='text-sm font-bold product-price text-center'>{currentProduct?.price?.formatted_with_symbol}</p>
         {!loading &&         <span className='rea-procent' style={{marginTop:'0.6rem',marginLeft:'0.3rem'}}>kr{Math.round(currentProduct?.price?.raw*1.3)}</span>}
         </div>
+{/*  */}
     <div className='add-tocart flex justify-center mt-6'>
     <div className='numItemsInput' >
     <input type='text' value={numItems}/>
@@ -104,7 +110,19 @@ fetchProductDetails(params.id)
     </div>
    
 
-   <Button type='button' variant='contained' style={{background:'#FB6D48'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
+   <Button type='button' variant='contained' style={{background:'#FB6D48',width:'250px'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
     </div>
+    {/*  */}
+    <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
+        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'310px',marginTop:'1rem'}}>
+        <FaCheck style={{color:'green',marginRight:'0.5rem'}}/>
+            <p style={{fontSize:'0.85rem'}}>Finns i webblager</p>
+        </div>
+        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'310px'}}>
+        <BsTruck style={{color:'green',marginRight:'0.5rem'}}/>
+            <p style={{fontSize:'0.85rem'}}> Skickas imorgon</p>
+        </div>
+    </div>
+    <RelatedProducts product={currentProduct}/>
     </section>
 }
