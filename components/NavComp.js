@@ -7,18 +7,22 @@ import { FaRegUser } from "react-icons/fa";
 import { BsBag } from "react-icons/bs";
 import { GiOstrich } from "react-icons/gi";
 import {useState,useEffect} from 'react'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import { IoMdClose } from "react-icons/io";
 import {signIn,signOut,useSession,getProviders} from 'next-auth/react'
 import commerce from '../lib/commerce'
+import { navMenuLinks } from '@utils/navlinks';
+import NavMenuItemCard from './NavMenuItemCard';
 const NavComp = () => {
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null)
   const [toggleDropDown, setToggleDropDown] = useState(false)
   const [userCart, setUserCart] = useState(null)
   const [showCart, setShowCart] = useState(false)
-
+const [showMenu, setShowMenu] = useState(false)
+console.log(userCart)
   const fetchProviders = async()=>{
     try {
       const resp = await getProviders()
@@ -39,9 +43,24 @@ const NavComp = () => {
 
   useEffect(()=>{
 fetchCart()
-  },[userCart])
+  },[])
   return (
     <>
+     <div className={`${showMenu? 'nav-menu-root show-nav-menu':'nav-menu-root'}`}>
+    <div className='nav-menu' style={{display:'flex',justifyContent:'flex-end',padding:'1rem',cursor:'pointer'}} onClick={()=> setShowMenu(false)}>
+      <IoMdClose style={{fontSize:'1.3rem'}}/>
+    </div>
+    {navMenuLinks.map((el,i)=>(
+      <div key={i} className='nav-menu'>
+      <Link href={el.path} key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+        <p>{el.title}</p>
+        <ArrowForwardIosIcon style={{fontSize:'0.95rem'}}/>
+      </Link>
+      </div>
+     
+    ))}
+     
+    </div>
      <div className={`${showCart ? "cart-menu show-cart" : "cart-menu"}`}>
      <div className='cart-title'>
      <h2>Varukorg</h2>
@@ -49,24 +68,30 @@ fetchCart()
        <IoMdClose/>
      </IconButton>
      </div>
-       {userCart?.line_items?.map((el)=>(
-        <div key={el.id}>
-          <img src={el?.image?.url} alt={el.name} style={{width:'50px',height:'50px'}}/>
-        </div>
+
+     <div>
+  {userCart?.line_items?.map((el)=>(
+       <NavMenuItemCard key={el.id} product={el}/>
        ))}
+     </div>
+     
       </div>
          <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
+      <IconButton onClick={()=>setShowMenu(true)}>
       <FaBars />
+     </IconButton>
       <div className='logo-container'>
       <h2 className='logo-text'>.struts</h2>
       <GiOstrich className='logo-icon'/>
       </div>
 
         <div style={{display:'flex',alignItems:'center'}}>
+        <IconButton>
         <FaRegUser />
+        </IconButton>
         <IconButton aria-label='cart' onClick={()=> setShowCart(true)}>
         <Badge badgeContent={userCart?.total_items} color='secondary'>
-        <BsBag style={{marginLeft:'0.75rem'}} />
+        <BsBag />
         </Badge>
         </IconButton>
       

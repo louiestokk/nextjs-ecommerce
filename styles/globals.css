@@ -22,6 +22,27 @@ body{
   font-size: 14px;
 }
 
+.nav-menu{
+  padding: 0.75rem;
+  border-top: 0.5px solid rgb(213, 211, 211);
+}
+
+.nav-menu-root{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  background: white;
+  height: 100%;
+  width: 80vw;
+  transition: all 0.3s linear;
+  transform: translateX(-100%);
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.show-nav-menu{
+  transition: all 0.3s linear;
+  transform: translateX(0%);
+}
 .logo-text{
   font-family: "Poppins", sans-serif;
   color: white;
@@ -61,10 +82,13 @@ justify-content: center;
   z-index: 99;
   transition: all 0.3s linear;
   z-index: 1000000;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.cart-menu-item{
+  border: 1px solid black;
+}
+
 .show-cart{
   transform: translateX(0);
   transition: all 0.3s linear;
