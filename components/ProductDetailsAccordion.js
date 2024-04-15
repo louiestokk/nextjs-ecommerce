@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 const ProductDetailsAccordion = ({product}) => {
+    console.log(product?.assets?.length>1)
   return (
     <div>  <Accordion>
     <AccordionSummary
@@ -19,7 +20,7 @@ const ProductDetailsAccordion = ({product}) => {
     </AccordionSummary>
     <AccordionDetails>
       <Typography variant='p' dangerouslySetInnerHTML={{__html:product?.description}} style={{fontSize:'0.8rem',padding:'0.25rem',fontWeight:'bold'}}>
-       
+     
       </Typography>
       <Typography variant='subtitle1' style={{fontSize:'0.8rem'}}>
       Struts - ditt online köpcenter för smycken och accessoarer till oslagbara priser och snabba leveranser! Upptäck vårt breda sortiment av smycken för herr, kvinna och barn, inklusive halsband, armband, örhängen, ringar och mycket mer i moderna, vintage och punk-stilar. Vi erbjuder även solglasögon och hårtillbehör som hårsnoddar och scrunchies. Utforska våra kategorier idag och hitta det perfekta tillbehöret för din stil. Välkommen till Struts!
@@ -35,9 +36,11 @@ const ProductDetailsAccordion = ({product}) => {
       <Typography>INNEHÅLL</Typography>
     </AccordionSummary>
     <AccordionDetails>
-      <Typography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        malesuada lacus ex, sit amet blandit leo lobortis eget.
+      <Typography variant='p' style={{fontSize:'0.8rem',padding:'0.25rem',fontWeight:'bold'}}>
+        {product?.assets?.length>1 && `Produkten finns i ${product?.assets?.length} olika varianter.`}
+      </Typography>
+      <Typography variant='subtitle1' style={{fontSize:'0.8rem',padding:'0.25rem'}}>
+      Upptäck Struts, ditt ultimata online köpcenter, där du finner Sveriges bästa priser på herrhalsband i dödskalle, viking, vintage, modern och punkstil. Vi erbjuder också ett omfattande sortiment av smycken för kvinnor. Utforska vår kollektion idag och hitta det perfekta smycket för din stil!
       </Typography>
     </AccordionDetails>
   </Accordion></div>
