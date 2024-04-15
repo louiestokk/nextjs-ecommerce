@@ -101,7 +101,7 @@ fetchProductDetails(params.id)
         {!loading &&         <span className='rea-procent' style={{marginTop:'0.6rem',marginLeft:'0.3rem'}}>kr{Math.round(currentProduct?.price?.raw*1.3)}</span>}
         </div>
 {/*  */}
-    <div className='add-tocart flex justify-center mt-6'>
+    <div className='add-tocart flex justify-center mt-6 w-full'>
     <div className='numItemsInput' >
     <input type='text' value={numItems}/>
     <div className='numsinput-reglage'>
@@ -111,15 +111,15 @@ fetchProductDetails(params.id)
     </div>
    
 
-   <Button type='button' variant='contained' style={{background:'#FB6D48',width:'275px'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
+   <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%'}} onClick={handleAddToCart}>{addingToCart?'LÄGGER TILL...': addedToCart?'TILLAGT':'LÄGG I KUNDVAGN'}</Button>
     </div>
     {/*  */}
     <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'335px',marginTop:'1rem'}}>
+        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'96.5%',marginTop:'1rem'}}>
         <FaCheck style={{color:'green',marginRight:'0.5rem'}}/>
             <p style={{fontSize:'0.85rem'}}>Finns i webblager</p>
         </div>
-        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'335px'}}>
+        <div style={{display:'flex',alignItems:'center',border:'1px solid rgb(233, 231, 231)',padding:'0.5rem',width:'96.5%'}}>
         <BsTruck style={{color:'green',marginRight:'0.5rem'}}/>
             <p style={{fontSize:'0.85rem'}}> Skickas imorgon</p>
         </div>
