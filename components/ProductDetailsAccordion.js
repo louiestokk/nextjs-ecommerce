@@ -33,7 +33,7 @@ const ProductDetailsAccordion = ({product}) => {
       aria-controls="panel2-content"
       id="panel2-header"
     >
-      <Typography>INNEHÅLL</Typography>
+      <Typography variant='subtitle2'>INNEHÅLL</Typography>
     </AccordionSummary>
     <AccordionDetails>
       <Typography variant='p' style={{fontSize:'0.8rem',padding:'0.25rem',fontWeight:'bold'}}>
