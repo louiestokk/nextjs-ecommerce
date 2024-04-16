@@ -83,7 +83,15 @@ fetchCart()
        ))}
      </div>
 
-       <div style={{width:'100%',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'2rem'}}>
+       <div style={{width:'100%',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'1rem',flexDirection:'column'}}>
+       <div style={{display:'flex',alignItems:'center',fontSize:'0.8rem',border:'0.5px solid lightgray',width:'100%',justifyContent:'space-evenly',padding:'0.2rem'}}>
+       <p>Total Items: {userCart?.total_items}</p>
+       <p style={{marginLeft:'0.25rem'}}>Unique Items: {userCart?.total_unique_items}</p>
+       </div>
+       <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',width:'100%',border:'0.5px solid lightgray',padding:'0.1rem'}}>
+        <p>Subtotal</p>
+        <p>{userCart.subtotal.formatted_with_symbol}</p>
+       </div>
        <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%'}} onClick={()=>{}}>TILL KASSAN</Button>
        </div>
 
