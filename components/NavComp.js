@@ -92,7 +92,7 @@ fetchCart()
         <p>Subtotal</p>
         <p>{userCart?.subtotal?.formatted_with_symbol}</p>
        </div>
-       <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%'}} onClick={()=>{}}>TILL KASSAN</Button>
+       <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%',marginTop:'0.5rem'}} onClick={()=>{}}>TILL KASSAN</Button>
        </div>
 
       </div>
