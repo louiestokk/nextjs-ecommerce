@@ -25,7 +25,7 @@ const NavComp = () => {
   const [userCart, setUserCart] = useState(null)
   const [showCart, setShowCart] = useState(false)
 const [showMenu, setShowMenu] = useState(false)
-console.log(userCart)
+
   const fetchProviders = async()=>{
     try {
       const resp = await getProviders()
@@ -90,7 +90,7 @@ fetchCart()
        </div>
        <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',width:'100%',border:'0.5px solid lightgray',padding:'0.1rem'}}>
         <p>Subtotal</p>
-        <p>{userCart.subtotal.formatted_with_symbol}</p>
+        <p>{userCart?.subtotal?.formatted_with_symbol}</p>
        </div>
        <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%'}} onClick={()=>{}}>TILL KASSAN</Button>
        </div>

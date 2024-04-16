@@ -38,7 +38,7 @@ fetchProduct()
       </div>
     
       <div style={{display:'flex',alignItems:'center',border:'1px solid lightgray',padding:'0.2rem'}}>
-        <input type='number' value={numberItems} style={{width:'40px',fontSize:'0.8rem'}} onChange={handleNumItemsChange}/>
+        <input type='number' defaultValue={numberItems} style={{width:'40px',fontSize:'0.8rem'}} onChange={handleNumItemsChange}/>
       </div>
       </div>
 
