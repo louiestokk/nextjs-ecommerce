@@ -77,7 +77,7 @@ fetchCart()
      </IconButton>
      </div>
 
-     <div>
+     <div style={{width:'100%', overflowY:'scroll'}}>
   {userCart?.line_items?.map((el)=>(
        <NavMenuItemCard key={el.id} product={el}/>
        ))}
