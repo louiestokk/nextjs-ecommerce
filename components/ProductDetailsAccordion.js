@@ -16,7 +16,7 @@ const ProductDetailsAccordion = ({product}) => {
       aria-controls="panel1-content"
       id="panel1-header"
     >
-      <Typography variant='subtitle2'>BESKRIVNING</Typography>
+      <Typography variant='subtitle2' style={{fontSize:'0.8rem'}}>BESKRIVNING</Typography>
     </AccordionSummary>
     <AccordionDetails>
       <Typography variant='p' dangerouslySetInnerHTML={{__html:product?.description}} style={{fontSize:'0.8rem',padding:'0.25rem',fontWeight:'bold'}}>
@@ -33,7 +33,7 @@ const ProductDetailsAccordion = ({product}) => {
       aria-controls="panel2-content"
       id="panel2-header"
     >
-      <Typography variant='subtitle2'>INNEHÅLL</Typography>
+      <Typography variant='subtitle2' style={{fontSize:'0.8rem'}}>INNEHÅLL</Typography>
     </AccordionSummary>
     <AccordionDetails>
       <Typography variant='p' style={{fontSize:'0.8rem',padding:'0.25rem',fontWeight:'bold'}}>

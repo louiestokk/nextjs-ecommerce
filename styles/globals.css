@@ -36,13 +36,15 @@ body{
   height: 100%;
   width: 80vw;
   transition: all 0.3s linear;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .show-nav-menu{
   transition: all 0.3s linear;
-  transform: translateX(0%);
+  transform: translateY(0%);
 }
+
+
 .logo-text{
   font-family: "Poppins", sans-serif;
   color: white;

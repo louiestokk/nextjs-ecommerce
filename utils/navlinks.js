@@ -1,19 +1,29 @@
+import React from "react"
+import { GiFeatherNecklace } from "react-icons/gi";
+import { GiEarrings } from "react-icons/gi";
+import { GiEngagementRing } from "react-icons/gi";
+import { LuBringToFront } from "react-icons/lu";
+import { PiSunglassesBold } from "react-icons/pi";
 export const navMenuLinks = [
     {
         title:'Halsband',
-        path:'smycken/halsband'
+        path:'smycken/halsband',
+        icon:<GiFeatherNecklace/>
     },
     {
         title:'Örhängen',
-        path:'smycken/orhangen'
+        path:'smycken/orhangen',
+        icon:<GiEarrings/>
     },
     {
         title:'Ringar',
-        path:'smycken/ringar'
+        path:'smycken/ringar',
+        icon:<GiEngagementRing/>
     },
     {
         title:'Armband',
-        path:'smycken/armband'
+        path:'smycken/armband',
+        icon:<LuBringToFront/>
     },
     {
         title:'Hårgrejer',
@@ -21,7 +31,8 @@ export const navMenuLinks = [
     },
     {
         title:'Solglasögon',
-        path:'solglasogon'
+        path:'solglasogon',
+        icon:<PiSunglassesBold/>
     },
 ]
 

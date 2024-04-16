@@ -15,7 +15,9 @@ import {signIn,signOut,useSession,getProviders} from 'next-auth/react'
 import commerce from '../lib/commerce'
 import { navMenuLinks } from '@utils/navlinks';
 import NavMenuItemCard from './NavMenuItemCard';
+import { useRouter } from 'next/navigation';
 const NavComp = () => {
+  const  router = useRouter()
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null)
   const [toggleDropDown, setToggleDropDown] = useState(false)
@@ -52,10 +54,15 @@ fetchCart()
     </div>
     {navMenuLinks.map((el,i)=>(
       <div key={i} className='nav-menu'>
-      <Link href={el.path} key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-        <p>{el.title}</p>
+      <div  key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between'}} onClick={()=> router.push(`${el.path}`)}>
+      <div style={{display:'flex',alignItems:'center'}}>
+        {el.icon}
+        {el.title==='Hårgrejer'&& <p>👩‍🦰</p>}
+        <p style={{marginLeft:'0.5rem'}}>{el.title}</p>
+      </div> 
+        
         <ArrowForwardIosIcon style={{fontSize:'0.95rem'}}/>
-      </Link>
+      </div>
       </div>
      
     ))}
@@ -74,7 +81,7 @@ fetchCart()
        <NavMenuItemCard key={el.id} product={el}/>
        ))}
      </div>
-     
+
       </div>
          <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
       <IconButton onClick={()=>setShowMenu(true)}>
