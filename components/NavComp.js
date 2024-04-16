@@ -16,6 +16,7 @@ import commerce from '../lib/commerce'
 import { navMenuLinks } from '@utils/navlinks';
 import NavMenuItemCard from './NavMenuItemCard';
 import { useRouter } from 'next/navigation';
+import { Button } from '@mui/material';
 const NavComp = () => {
   const  router = useRouter()
   const isUserLoggedIn = true;
@@ -82,12 +83,16 @@ fetchCart()
        ))}
      </div>
 
+       <div style={{width:'100%',display:'flex',justifyContent:'center',alignItems:'center',marginTop:'2rem'}}>
+       <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%'}} onClick={()=>{}}>TILL KASSAN</Button>
+       </div>
+
       </div>
          <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
       <IconButton onClick={()=>setShowMenu(true)}>
       <FaBars />
      </IconButton>
-      <div className='logo-container'>
+      <div className='logo-container' onClick={()=> router.push('/')}>
       <h2 className='logo-text'>.struts</h2>
       <GiOstrich className='logo-icon'/>
       </div>
