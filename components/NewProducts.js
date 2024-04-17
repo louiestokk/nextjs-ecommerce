@@ -19,8 +19,8 @@ const NewProducts = () => {
   color="green"
   ariaLabel="loading"
 />:  <div className='products-container'>
-    {products && products?.length>0 && products.map((el)=>(
-        <div key={el?.id}>
+    {products && products?.length>0 && products.map((el,i)=>(
+        <div key={i}>
            <ProductCard product={el}/>
 
         </div>
