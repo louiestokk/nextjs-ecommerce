@@ -52,10 +52,10 @@ const handleRouting = (e) =>{
     <img src={`${product?.image?.url}`} alt={product?.name} className='product-img'/>
     <div>
     <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-    <p className='text-sm font-bold product-price'>{product.price.formatted_with_symbol}</p>
-    <TbShoppingBagPlus style={{color:'rgb(0, 131, 138',fontSize:'1.5rem',cursor:'pointer'}} onClick={()=>addProduct(product.id)} className='add-to-cart-icon'/>
+    <p className='text-sm font-bold product-price'>{product?.price?.formatted_with_symbol}</p>
+    <TbShoppingBagPlus style={{color:'rgb(0, 131, 138',fontSize:'1.7rem',cursor:'pointer'}} onClick={()=>addProduct(product.id)} className='add-to-cart-icon'/>
     </div>
-    <span className='rea-procent'>kr{Math.round(product.price.raw*1.3)}</span>
+    <span className='rea-procent'>kr{Math.round(product?.price?.raw*1.3)}</span>
     </div>
     <p className='text-sm product-name'>{product?.name}</p>
      <p className='text-xs product-category'>{product?.categories?.[0]?.name}</p>

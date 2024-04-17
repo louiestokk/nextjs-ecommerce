@@ -9,6 +9,10 @@ import Products from "@components/Products"
 import Popular from '@components/Popular'
 import NewCollection from '@components/NewCollection'
 import UtvaldaKategorier from '@components/UtvaldaKategorier'
+import NewProducts from '@components/NewProducts'
+import TopSeller from '@components/TopSeller'
+import Sunglasses from '@components/Sunglasses'
+
 const Home = () => {
   const [allProducts, setAllProducts] = useState([])
   const [categories, setCategories] = useState([])
@@ -20,7 +24,6 @@ const dispatch = useDispatch()
       const resp = await fetch('/api/products')
       const data = await resp.json()
       dispatch(addProducts(data.products))
-      setAllProducts(data.products)
       setCategories(data.categories)
       dispatch(stopLoading())
     } catch (error) {
@@ -33,10 +36,11 @@ fetchProducts()
   return (
     <section className='home-root'>
      <Hero /> 
-    <Products products={allProducts} title={'Nytt hos oss'}/>
+     <NewProducts />
     <Popular />
-    <Products products={allProducts} title={'Toppsäljare'} />
+    <TopSeller/>
     <NewCollection />
+    <Sunglasses />
     <UtvaldaKategorier categories={categories}/>
     </section>
   )

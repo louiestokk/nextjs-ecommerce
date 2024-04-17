@@ -46,7 +46,7 @@ const [showMenu, setShowMenu] = useState(false)
 
   useEffect(()=>{
 fetchCart()
-  },[])
+  },[userCart])
   return (
     <>
      <div className={`${showMenu? 'nav-menu-root show-nav-menu':'nav-menu-root'}`}>
