@@ -1,8 +1,20 @@
 import React from 'react'
+import CategoryPageHeeader from '@components/CategoryPageHeeader'
 
 const Solglasogon = () => {
   return (
-    <div>Solglasogon</div>
+    <div>
+      <CategoryPageHeeader slug={'Solglasogon'} />
+    <div>
+    <div>filtering sorting</div>
+    Products
+    </div>
+
+<div>seo accordion</div>
+
+<div>Banners categories link building</div>
+ 
+    </div>
   )
 }
 

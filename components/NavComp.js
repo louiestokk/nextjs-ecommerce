@@ -55,7 +55,10 @@ fetchCart()
     </div>
     {navMenuLinks.map((el,i)=>(
       <div key={i} className='nav-menu'>
-      <div  key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between'}} onClick={()=> router.push(`${el.path}`)}>
+      <div  key={i} style={{display:'flex',alignItems:'center',justifyContent:'space-between',cursor:'pointer'}} onClick={()=>{
+         router.push(`${el.path}`)
+         setShowMenu(false)
+      }}>
       <div style={{display:'flex',alignItems:'center'}}>
         {el.icon}
         {el.title==='Hårgrejer'&& <p>👩‍🦰</p>}

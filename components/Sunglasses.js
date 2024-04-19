@@ -2,24 +2,23 @@
 
 import React,{useState,useEffect} from 'react'
 import { useSelector } from 'react-redux'
-import commerce from '../lib/commerce'
 import ProductCard from './ProductCard'
 import { Oval } from 'react-loader-spinner'
 
-const Sunglasses = () => {
-    const {payload} = useSelector((state)=> state.products.productsArray)   
+const Sunglasses = () => { 
     const isLoading = useSelector((state)=> state.loading.isLoadingload)
     const [products, setProducts] = useState([])
+
 const fetchSunGlasses = async()=>{
   try {
-    const {data} = await commerce.products.list({
-      category_slug: ['Solglasogon'],
-    })
+    const resp = await fetch('/api/solglasogon')
+    const {data} = await resp.json()
    setProducts(data)
   } catch (error) {
     console.log(error)
   }
 }
+
 useEffect(()=>{
 fetchSunGlasses()
 },[])
