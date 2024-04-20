@@ -21,7 +21,7 @@ const NewProducts = () => {
 />:  <div className='products-container'>
     {products && products?.length>0 && products.map((el,i)=>(
         <div key={i}>
-           <ProductCard product={el}/>
+           <ProductCard product={el} width='180px'/>
 
         </div>
     ))}

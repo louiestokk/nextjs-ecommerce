@@ -27,10 +27,11 @@ const [showSeoText, setshowSeoText] = useState(false)
 
 
 
-    <div>
-    <Button type='button' variant='contained' style={{color:'black'}}>Dam Solgalsögon</Button>
-    <Button type='button' variant='contained' style={{color:'black'}}>Herr Solgalsögon</Button>
+    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'2rem'}}>
+    <Link href={''} style={{color:'black',border:'1px #eee solid',padding:'0.5rem',fontSize:'0.8rem',fontWeight:'bold',marginRight:'0.5rem'}}>Dam Solgalsögon</Link>
+    <Link href={''} style={{color:'black',border:'1px #eee solid',padding:'0.5rem',fontSize:'0.8rem',fontWeight:'bold'}}>Herr Solgalsögon</Link>
     </div>
+
     </div>
   )
 }

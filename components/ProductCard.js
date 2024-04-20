@@ -32,7 +32,7 @@ const productReviws = [
   }
 ]
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product,width}) => {
   const router = useRouter()
 const randomNumber = Math.floor(Math.random()*5)
 const [addingToCart, setAddingToCart] = useState(false)
@@ -53,7 +53,7 @@ const handleRouting = (e) =>{
 }
 
   return (
-    <div className='product' onClick={handleRouting}>
+    <div className='product' onClick={handleRouting} style={{width:width}}>
     <div className='rea-bubble'>
       <p>30%</p>
     </div>

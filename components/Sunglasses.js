@@ -14,6 +14,7 @@ const fetchSunGlasses = async()=>{
     const resp = await fetch('/api/solglasogon')
     const {data} = await resp.json()
    setProducts(data)
+   
   } catch (error) {
     console.log(error)
   }
@@ -34,7 +35,7 @@ fetchSunGlasses()
 />:  <div className='products-container'>
     {products?.length>0 && products.map((el,i)=>(
         <div key={i}>
-           <ProductCard product={el}/>
+           <ProductCard product={el} width={'180px'}/>
 
         </div>
     ))}

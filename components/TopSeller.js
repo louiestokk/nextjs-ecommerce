@@ -19,7 +19,7 @@ const TopSeller = () => {
 />: <div className='products-container'>
     {payload && payload?.length>0 && payload.map((el)=>(
         <div key={el?.id}>
-           <ProductCard product={el}/>
+           <ProductCard product={el} width='180px'/>
 
         </div>
     ))}
