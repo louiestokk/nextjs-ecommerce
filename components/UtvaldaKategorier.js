@@ -1,6 +1,7 @@
 import React from 'react'
 
 const UtvaldaKategorier = ({categories}) => {
+
   return (
     <>
  <h2 style={{fontWeight:'bold',fontSize:'2rem'}} className='populara-produkter'>Utvalda kategorier av .struts </h2>

@@ -3,14 +3,15 @@
 import React,{useEffect, useState} from 'react'
 import FilterListIcon from '@mui/icons-material/FilterList';
 import SortIcon from '@mui/icons-material/Sort';
-import { Button,Box,Grid,Card,CardMedia,CardContent,Typography,CardActions } from '@mui/material';
+import { Button,Box,Grid} from '@mui/material';
 import ProductCard from './ProductCard';
-const CategoryPageProducts = () => {
+
+const CategoryPageProducts = ({slug}) => {
 const [products, setProducts] = useState([])
 
 const fetchSunGlasses = async()=>{
   try {
-    const resp = await fetch('/api/solglasogon')
+    const resp = await fetch(slug)
     const {data} = await resp.json()
    setProducts(data)
   } catch (error) {
@@ -43,7 +44,7 @@ const fetchSunGlasses = async()=>{
 <Box sx={{flexGrow:1}}>
   <Grid container spacing={1}>
     {products.map((el)=>(
-      <Grid item xs={6} md={6} spacing={2}>
+      <Grid item xs={6} md={6}>
     <ProductCard product={el} width={'100%'}/>
     </Grid>
     ))}

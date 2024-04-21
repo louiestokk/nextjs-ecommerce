@@ -5,17 +5,17 @@ import { Button } from '@mui/material'
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { solglasogonCatPage } from '@locales/solglasogon-cat-page/text'
-const CategoryPageHeeader = ({slug}) => {
+
+const CategoryPageHeeader = ({slug,url,titelSv,seoTextSv}) => {
 const [products, seTproducts] = useState([])
 const pathname = usePathname()
-const {titleSv,titleEn,seoTextSv,seoTextEn} = solglasogonCatPage
+
 const [showSeoText, setshowSeoText] = useState(false)
   return (
     <div>
     <Link href={`${pathname}`} style={{fontSize:'0.8rem',color:'lightgray',padding:'0.5rem'}}>{`home${pathname}`}</Link>
-    <img src='/assets/images/solglasogon-struts.png' alt='banner-img' style={{maxHeight:'150px',width:'100%'}}/>
-    <h1 className='category-page-title'>{titleSv}</h1>
+    <img src={url} alt='banner-img' style={{maxHeight:'160px',width:'100%'}}/>
+    <h1 className='category-page-title'>{titelSv}</h1>
 
     <div>
  <p className={showSeoText?'show-cat-page-seo':'category-page-seo-text'}>{seoTextSv}</p>

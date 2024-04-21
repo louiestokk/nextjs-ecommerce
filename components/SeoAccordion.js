@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const SeoAccordion = ({data,title}) => {
   return (
     <div style={{width:'100%',marginTop:'3rem'}}>
-          <h2 style={{fontWeight:'bold',fontSize:'2rem',fontFamily:'Source Sans Pro, sans-serif',lineHeight:'36px'}} className='populara-produkter'>Lär mer om våra solglasögon.</h2>
+          <h2 style={{fontWeight:'bold',fontSize:'2rem',fontFamily:'Source Sans Pro, sans-serif',lineHeight:'36px'}} className='populara-produkter'>{title}</h2>
     {data?.map((el,i)=>(
         <Accordion key={i}>
             <AccordionSummary  aria-controls={`panel${i}-header`}
