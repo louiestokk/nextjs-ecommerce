@@ -3,7 +3,7 @@
 import React,{useState,useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import { isLoading,stopLoading } from '@redux/features/loading/loadingSlice'
-import { addProducts } from '@redux/features/products/productsSlise'
+import { addProducts,addCategories } from '@redux/features/products/productsSlise'
 import Hero from "@components/Hero"
 import Popular from '@components/Popular'
 import NewCollection from '@components/NewCollection'
@@ -22,6 +22,7 @@ const dispatch = useDispatch()
       const resp = await fetch('/api/products')
       const data = await resp.json()
       dispatch(addProducts(data.products))
+      dispatch(addCategories(data.categories))
       setCategories(data.categories)
       dispatch(stopLoading())
     } catch (error) {

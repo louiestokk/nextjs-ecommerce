@@ -6,6 +6,7 @@ import { seoAccordionText } from '@utils/seoaccordiontext';
 import PageAboveFooterText from '@components/PageAboveFooterText';
 import { solglasogonCatPage } from '@locales/solglasogon-cat-page/text'
 import CategoryPageDealBanner from '@components/CategoryPageDealBanner';
+import CatPageCategoriesLinks from '@components/CatPageCategoriesLinks';
 
 const Solglasogon = () => {
   const {titleSv,titleEn,seoTextSv,seoTextEn} = solglasogonCatPage
@@ -13,7 +14,7 @@ const Solglasogon = () => {
   return (
     <div style={{width:'100%'}}>
       <CategoryPageHeeader slug={'Solglasogon'} url={'/assets/images/solglasogon-struts.png'} titelSv={titleSv} seoTextSv={seoTextSv}/>
-
+<CatPageCategoriesLinks name={'Solglasögon'}/>
       <CategoryPageDealBanner url={'/assets/images/spring-deals-solglasogon.png'} alt={'spring deals solglasögon'}/>
       
     <CategoryPageProducts slug={'/api/solglasogon'}/>

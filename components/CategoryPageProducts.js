@@ -43,8 +43,8 @@ const fetchSunGlasses = async()=>{
 
 <Box sx={{flexGrow:1}}>
   <Grid container spacing={1}>
-    {products.map((el)=>(
-      <Grid item xs={6} md={6}>
+    {products.map((el,i)=>(
+      <Grid item xs={6} md={6} key={i}>
     <ProductCard product={el} width={'100%'}/>
     </Grid>
     ))}

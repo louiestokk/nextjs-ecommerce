@@ -24,14 +24,6 @@ const [showSeoText, setshowSeoText] = useState(false)
     {showSeoText?    <Button type='button' variant='contained' style={{color:'black',border:'1px solid black',width:'7rem',fontSize:'0.7rem', padding:'0.2rem',width:'2.5rem',margin:'0.5rem auto',textAlign:'center'}} onClick={()=> setshowSeoText(false)}>STÄNG</Button>:
    <Button type='button' variant='contained' style={{color:'black',border:'1px solid black',width:'7rem',fontSize:'0.7rem', padding:'0.2rem',width:'2.5rem',margin:'0.5rem auto',textAlign:'center'}} onClick={()=> setshowSeoText(true)}>LÄS MER</Button>}
    </div>
-
-
-
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'2rem'}}>
-    <Link href={''} style={{color:'black',border:'1px #eee solid',padding:'0.5rem',fontSize:'0.8rem',fontWeight:'bold',marginRight:'0.5rem'}}>Dam Solgalsögon</Link>
-    <Link href={''} style={{color:'black',border:'1px #eee solid',padding:'0.5rem',fontSize:'0.8rem',fontWeight:'bold'}}>Herr Solgalsögon</Link>
-    </div>
-
     </div>
   )
 }

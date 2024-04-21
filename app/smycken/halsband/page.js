@@ -5,12 +5,14 @@ import SeoAccordion from '@components/SeoAccordion';
 import PageAboveFooterText from '@components/PageAboveFooterText';
 import { halsbandCatPage } from '@locales/solglasogon-cat-page/text';
 import { seoAccordionTextHalsband } from '@utils/seoaccordiontext';
+import CatPageCategoriesLinks from '@components/CatPageCategoriesLinks';
 
 export default function Halsband() {
   const {titleSv,seoTextSv}= halsbandCatPage
 
   return <div style={{width:'100%'}}>
     <CategoryPageHeeader url='/assets/images/halsband-struts.png' titelSv={titleSv} seoTextSv={seoTextSv}/>
+    <CatPageCategoriesLinks name={'Halsband'}/>
     <CategoryPageDealBanner url='/assets/images/spring-deals-halsband.png' alt={titleSv}/>
     <CategoryPageProducts slug='/api/halsband'/>
     <SeoAccordion data={seoAccordionTextHalsband} title={'Läs mer om våra halsband.'}/>
