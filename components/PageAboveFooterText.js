@@ -3,7 +3,7 @@ import React from 'react'
 const PageAboveFooterText = ({title,seoText}) => {
   return (
     <div style={{ textAlign: "center", marginTop: "2.5rem",width:'100%', display:'flex',flexDirection:'column',justifyContent:'center' }}>
-    <h2 style={{fontWeight:'bold',fontSize:'2rem',fontFamily:'Source Sans Pro, sans-serif',lineHeight:'36px'}} className='populara-produkter'>{title}</h2>
+    <h2 style={{fontWeight:'bold',fontSize:'2rem',fontFamily:'Source Sans Pro, sans-serif',lineHeight:'36px',maxWidth:'90%',marginBottom:'1rem'}} className='populara-produkter'>{title}</h2>
       <p
         className="sans"
         style={{
