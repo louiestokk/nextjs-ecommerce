@@ -35,7 +35,7 @@ const items = [
 
 const PopularCategories = () => {
   return (
-    <div style={{textAlign:'center',width:'100%'}}>
+    <div style={{textAlign:'center',width:'100%',marginBottom:'2.8rem',marginTop:'0.5rem'}}>
         <h2 className='populara-produkter' style={{fontWeight:'bold',fontSize:'1.6rem'}}>POPULÄRA KATEGORIER</h2>
         <div style={{display:'flex',alignItems:'center',overflowX:'scroll'}}>
             {items.map((el,i)=>(

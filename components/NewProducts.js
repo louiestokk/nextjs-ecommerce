@@ -4,13 +4,14 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import ProductCard from './ProductCard'
 import { Oval } from 'react-loader-spinner'
+import Link from 'next/link'
 const NewProducts = () => {
     const {payload} = useSelector((state)=> state.products.productsArray)
     const isLoading = useSelector((state)=> state.loading.isLoadingload)
     const products = [].concat(payload).reverse()
     
   return (
-    <div>
+    <div style={{marginBottom:'2rem'}}>
     <h2 style={{fontWeight:'bold',fontSize:'2.4rem'}} className='populara-produkter'>Nytt hos oss </h2>
     {isLoading?  <Oval
   height="100"
@@ -26,8 +27,10 @@ const NewProducts = () => {
         </div>
     ))}
     </div>}
-   
-
+    <div style={{display:'flex',justifyContent:'center'}}>
+    <Link href={'/nyheter'} className='se-fler-link'>SE FLER </Link>
+    </div>
+  
     </div>
   )
 }

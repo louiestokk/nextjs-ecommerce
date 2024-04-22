@@ -4,7 +4,7 @@ import React,{useState,useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import ProductCard from './ProductCard'
 import { Oval } from 'react-loader-spinner'
-
+import Link from 'next/link'
 const Sunglasses = () => { 
     const isLoading = useSelector((state)=> state.loading.isLoadingload)
     const [products, setProducts] = useState([])
@@ -40,6 +40,9 @@ fetchSunGlasses()
         </div>
     ))}
     </div>}
+    <div style={{display:'flex',justifyContent:'center'}}>
+    <Link href={'/solglasogon'} className='se-fler-link'>SE FLER </Link>
+    </div>
     </div>
   )
 }

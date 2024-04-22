@@ -41,6 +41,9 @@ fetchProducts()
     <TopSeller/>
     <NewCollection />
     <Sunglasses />
+    <div style={{margin:'3rem auto',width:'95%',boxShadow:'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}}>
+      <img src='/assets/images/ecommerce-struts.png' alt='shoppa online' style={{boxShadow:'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'}}/>
+    </div>
     <UtvaldaKategorier categories={categories}/>
     </section>
   )

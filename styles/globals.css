@@ -257,6 +257,23 @@ border-radius: 5px;
 
 }
 
+.se-fler-link{
+  background: #FB6D48;
+  color: white;
+  font-weight: 700;
+  line-height: normal;
+  padding: 8px 18px;
+  font-size: 13px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-family: "Roboto",arial,helvetica,sans-serif;
+  margin-top: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 .product-price{
   font-family: "Poppins", sans-serif;
   margin-top: 0.5rem;
@@ -272,7 +289,7 @@ border-radius: 5px;
 
 .populara-produkter{
   font-family: "Dongle", sans-serif;
-  padding: 1rem;
+  text-align: center;
 }
 /* productDetails */
 .product_item{

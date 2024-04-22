@@ -4,11 +4,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import ProductCard from './ProductCard'
 import { Oval } from 'react-loader-spinner'
+import Link from 'next/link'
 const TopSeller = () => {
     const {payload} = useSelector((state)=> state.products.productsArray)
     const isLoading = useSelector((state)=> state.loading.isLoadingload)
   return (
-    <div>
+    <div style={{marginTop:'2rem'}}>
     <h2 style={{fontWeight:'bold',fontSize:'2.4rem'}} className='populara-produkter'>Trendar nu </h2>
 {isLoading?<Oval
   height="100"
@@ -25,7 +26,9 @@ const TopSeller = () => {
     ))}
     </div>}
    
-
+    <div style={{display:'flex',justifyContent:'center'}}>
+    <Link href={'/toppseller'} className='se-fler-link'>SE FLER </Link>
+    </div>
     </div>
   )
 }
