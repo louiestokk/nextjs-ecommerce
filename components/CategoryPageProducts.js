@@ -5,15 +5,18 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import SortIcon from '@mui/icons-material/Sort';
 import { Button,Box,Grid} from '@mui/material';
 import ProductCard from './ProductCard';
-
+import { Oval } from 'react-loader-spinner';
 const CategoryPageProducts = ({slug}) => {
 const [products, setProducts] = useState([])
+const [loading, setLoading] = useState(false)
 
 const fetchSunGlasses = async()=>{
   try {
+    setLoading(true)
     const resp = await fetch(slug)
     const {data} = await resp.json()
    setProducts(data)
+   setLoading(false)
   } catch (error) {
     console.log(error)
   }
@@ -40,16 +43,21 @@ const fetchSunGlasses = async()=>{
   </Button>
 </div>
 
-
-<Box sx={{flexGrow:1}}>
+{loading?<Oval
+  height="100"
+  width="100"
+  radius="9"
+  color="green"
+  ariaLabel="loading"
+/>: <Box sx={{flexGrow:1}}>
   <Grid container spacing={1}>
-    {products.map((el,i)=>(
+    {products?.map((el,i)=>(
       <Grid item xs={6} md={6} key={i}>
     <ProductCard product={el} width={'100%'}/>
     </Grid>
     ))}
   </Grid>
-</Box>
+</Box>}
 
     </div>
   )

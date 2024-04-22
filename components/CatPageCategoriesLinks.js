@@ -22,7 +22,7 @@ const CatPageCategoriesLinks = ({name}) => {
   return (
     <div style={{display:'flex',alignItems:'center',justifyContent:'center',marginTop:'2rem'}}>
     {categories?.filter((el)=> el?.name === name)?.[0]?.children?.map((el,i)=>(
-        <Link href={`smycken/halsband/${el.slug}`} style={{color:'black',border:'1px #eee solid',padding:'0.5rem',fontSize:'0.8rem',fontWeight:'bold',marginRight:'0.5rem'}}>{el.name}</Link>
+        <Link key={i} href={`smycken/halsband/${el.slug}`} style={{color:'black',border:'1px #eee solid',padding:'0.5rem',fontSize:'0.8rem',fontWeight:'bold',marginRight:'0.5rem'}}>{el.name}</Link>
     ))}
  
 

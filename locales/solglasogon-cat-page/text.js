@@ -6,6 +6,11 @@ export const solglasogonCatPage = {
 }
 
 export const halsbandCatPage = {
-    titleSv:'Halsband för Alla Tillfällen',
+    titleSv:'Halsband För Alla Tillfällen',
     seoTextSv:'Upptäck vår mångsidiga samling av halsband som passar för alla - oavsett kön, ålder eller tillfälle. Hos oss hittar du ett brett utbud av halsband för både män, kvinnor, ungdomar och barn, perfekta för att komplettera din stil och göra varje tillfälle minnesvärt. Vare sig det är för vardagligt bruk, en speciell händelse eller en gåva till någon du älskar, våra halsband erbjuder en mångfald av stilar, material och designer för att passa alla smaker och behov. Utforska vår kollektion idag och hitta det perfekta halsbandet som uttrycker din unika personlighet och stil.'
+}
+
+export const orhangenCatPage = {
+    titleSv:'Örhängen för Alla Tillfällen',
+    seoTextSv:'Utforska vår varierade kollektion av örhängen som passar för alla - oavsett kön, ålder eller tillfälle. Hos oss hittar du ett brett utbud av örhängen för män, kvinnor, barn och ungdomar, perfekta för att komplettera din stil och göra varje tillfälle minnesvärt. Vare sig det är för vardagligt bruk, en speciell händelse eller en present till någon du älskar, våra örhängen erbjuder en mångfald av stilar, material och designer för att passa alla smaker och behov. Utforska vår kollektion idag och hitta det perfekta paret örhängen som uttrycker din unika personlighet och stil.'
 }

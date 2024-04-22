@@ -11,7 +11,7 @@ import UtvaldaKategorier from '@components/UtvaldaKategorier'
 import NewProducts from '@components/NewProducts'
 import TopSeller from '@components/TopSeller'
 import Sunglasses from '@components/Sunglasses'
-
+import PopularCategories from '@components/PopularCategories'
 const Home = () => {
   const [categories, setCategories] = useState([])
 
@@ -35,6 +35,7 @@ fetchProducts()
   return (
     <section className='home-root'>
      <Hero /> 
+     <PopularCategories />
      <NewProducts />
     <Popular />
     <TopSeller/>
