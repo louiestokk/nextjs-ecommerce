@@ -57,7 +57,7 @@ fetchProduct()
     
       <div style={{display:'flex',alignItems:'center',border:'1px solid lightgray',padding:'0.2rem'}}>
       <RemoveIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginRight:'0.3rem',cursor:'pointer'}}/>
-        <input type='number' defaultValue={numberItems} style={{width:'40px',fontSize:'0.8rem'}} onChange={handleNumItemsChange}/>
+        <input type='number' defaultValue={numberItems} style={{width:'30px',fontSize:'0.8rem'}} onChange={handleNumItemsChange}/>
         <AddIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginLeft:'0.3rem',cursor:'pointer'}}/>
       </div>
       </div>
