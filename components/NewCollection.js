@@ -9,6 +9,7 @@ const NewCollection = () => {
         <div style={{marginLeft:'0.1rem'}}>
         <img src='/assets/images/colleection.png' alt='new collection fashion' className='new-collection-img'/>
         </div>
+        
     </section>
   )
 }

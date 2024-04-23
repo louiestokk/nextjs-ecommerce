@@ -4,13 +4,17 @@ import React,{useEffect,useState} from 'react'
 import commerce from '../lib/commerce'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { IconButton } from '@mui/material';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
 
 const NavMenuItemCard = ({product}) => {
   const [fetchdProduct, setFetchdProduct] = useState({})
-  const [numberItems, setnumberItems] = useState(product?.quantity)
+  const [numberItems, setNumberItems] = useState(product?.quantity)
 const [isRemoving, setIsRemoving] = useState(false)
 
-  const handleNumItemsChange=()=>{}
+  const handleNumItemsChange=(e)=>{
+    setNumberItems(Number(e.target.value))
+  }
 
   const handleDeleteProduct=async(productId)=>{
     try {
@@ -52,7 +56,9 @@ fetchProduct()
       </div>
     
       <div style={{display:'flex',alignItems:'center',border:'1px solid lightgray',padding:'0.2rem'}}>
+      <RemoveIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginRight:'0.3rem',cursor:'pointer'}}/>
         <input type='number' defaultValue={numberItems} style={{width:'40px',fontSize:'0.8rem'}} onChange={handleNumItemsChange}/>
+        <AddIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginLeft:'0.3rem',cursor:'pointer'}}/>
       </div>
       </div>
 
