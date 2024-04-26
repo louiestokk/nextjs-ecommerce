@@ -6,15 +6,30 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { IconButton } from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import {RotatingLines} from 'react-loader-spinner'
 
 const NavMenuItemCard = ({product}) => {
   const [fetchdProduct, setFetchdProduct] = useState({})
-  const [numberItems, setNumberItems] = useState(product?.quantity)
+  const [numberItems, setNumberItems] = useState(0)
 const [isRemoving, setIsRemoving] = useState(false)
 
-  const handleNumItemsChange=(e)=>{
-    setNumberItems(Number(e.target.value))
+
+const updateCartCommerce = async()=>{
+  try {
+    const resp = await commerce.cart.update(product?.id, { quantity: product?.quantity+1 })
+  } catch (error) {
+    console.log(error)
   }
+}
+
+const handleUpdateCartMinus =async()=>{
+  try {
+    const resp = await commerce.cart.update(product?.id, { quantity: product?.quantity-1 })
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
   const handleDeleteProduct=async(productId)=>{
     try {
@@ -51,14 +66,23 @@ fetchProduct()
 
       <div style={{lineHeight:'0px'}}>
       <p className='text-sm font-bold product-price' style={{fontSize:'0.8rem'}}>{product.price.formatted_with_symbol}</p>
+      <div style={{display:'flex',alignItems:'center'}}>
       <span className='rea-procent'>kr{Math.round(product.price.raw*1.3)}</span>
-        <DeleteOutlineIcon style={{color:'gray',fontSize:'1rem',marginLeft:'0.2rem',cursor:'pointer'}} onClick={()=> handleDeleteProduct(product.id)}/>
+      {isRemoving?   <RotatingLines
+  height="25"
+  width="25"
+  color="#D3D3D3"
+  ariaLabel="rotating-lines-loading"
+  visible={true}/>: <DeleteOutlineIcon style={{color:'gray',fontSize:'1rem',marginLeft:'0.2rem',cursor:'pointer'}} onClick={()=> handleDeleteProduct(product.id)}/>}
+      </div>
+     
+       
       </div>
     
       <div style={{display:'flex',alignItems:'center',border:'1px solid lightgray',padding:'0.2rem'}}>
-      <RemoveIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginRight:'0.3rem',cursor:'pointer'}}/>
-        <input type='number' defaultValue={numberItems} style={{width:'30px',fontSize:'0.8rem'}} onChange={handleNumItemsChange}/>
-        <AddIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginLeft:'0.3rem',cursor:'pointer'}}/>
+      <RemoveIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginRight:'0.3rem',cursor:'pointer'}} onClick={handleUpdateCartMinus}/>
+        <p  style={{width:'20px',fontSize:'0.8rem'}}>{product?.quantity}</p>
+        <AddIcon style={{fontSize:'1rem',border:'1px solid lightgray',marginLeft:'0.3rem',cursor:'pointer'}} onClick={updateCartCommerce}/>
       </div>
       </div>
 

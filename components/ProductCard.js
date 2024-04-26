@@ -43,7 +43,6 @@ const addProduct = async(productId)=>{
   const resp = await commerce.cart.add(productId,1).then((response) => console.log(response))
   setAddingToCart(false)
   setProductAdded(true)
-  console.log(resp)
 }
 
 const handleRouting = (e) =>{
