@@ -95,9 +95,16 @@ fetchCart()
         <p>Subtotal</p>
         <p>{userCart?.subtotal?.formatted_with_symbol}</p>
        </div>
-       <Button type='button' variant='contained' style={{background:'#FB6D48',width:'80%',marginTop:'0.5rem'}} onClick={()=>{}}>TILL KASSAN</Button>
+       <Button type='button' variant='contained' style={{background:'#FB6D48',width:'90%',marginTop:'0.5rem'}} onClick={()=>{
+        router.push('/cart/checkout')
+        setShowCart(false)
+       }}>TILL KASSAN</Button>
        </div>
-
+       <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',marginTop:'0.75rem'}}>
+        <Image src={'/assets/images/visa.jpg'} width={50} height={50} alt='visa kort'/>
+        <Image src={'/assets/images/mastercard.jpg'} width={50} height={50} alt='visa kort'/>
+        <Image src={'/assets/images/logo_paypal.jpg'} width={50} height={50} alt='visa kort'/>
+       </div>
       </div>
          <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
       <IconButton onClick={()=>setShowMenu(true)}>

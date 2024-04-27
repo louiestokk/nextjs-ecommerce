@@ -7,16 +7,18 @@ import { IconButton } from '@mui/material';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import {RotatingLines} from 'react-loader-spinner'
+import { useRouter } from 'next/navigation';
 
 const NavMenuItemCard = ({product}) => {
   const [fetchdProduct, setFetchdProduct] = useState({})
   const [numberItems, setNumberItems] = useState(0)
 const [isRemoving, setIsRemoving] = useState(false)
-
+const router = useRouter()
 
 const updateCartCommerce = async()=>{
   try {
-    const resp = await commerce.cart.update(product?.id, { quantity: product?.quantity+1 })
+    await commerce.cart.update(product?.id, { quantity: product?.quantity+1 })
+    router.refresh()
   } catch (error) {
     console.log(error)
   }
@@ -24,7 +26,8 @@ const updateCartCommerce = async()=>{
 
 const handleUpdateCartMinus =async()=>{
   try {
-    const resp = await commerce.cart.update(product?.id, { quantity: product?.quantity-1 })
+   await commerce.cart.update(product?.id, { quantity: product?.quantity-1 })
+    router.refresh()
   } catch (error) {
     console.log(error)
   }

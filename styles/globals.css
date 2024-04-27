@@ -108,6 +108,7 @@ justify-content: center;
   transition: all 0.3s linear;
   z-index: 1000000;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem 0;
 }
 
 .cart-menu-item{
