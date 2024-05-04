@@ -14,7 +14,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    <head></head>
+    <head>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAioOfEybpNtA1Sbk4dI4DmS7-Y_zEq1lg&loading=async&libraries=places&callback=initMap">
+</script>
+
+
+    </head>
       <body>
       <TopNav color='white' background='#fd5c63' height=''/>
         <div className="app">
