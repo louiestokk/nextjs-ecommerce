@@ -19,7 +19,6 @@ export default function RootLayout({ children }) {
     src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}&loading=async&libraries=places&callback=initMap`}>
 </script>
 
-
     </head>
       <body>
       <TopNav color='white' background='#fd5c63' height=''/>
