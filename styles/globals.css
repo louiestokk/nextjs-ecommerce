@@ -503,6 +503,6 @@ transition: all 0.1s linear;
   width: 96%;
   margin: 0.2rem auto;
 }
-.pac-input{
+#autocomplete{
   width: 100%;
 }

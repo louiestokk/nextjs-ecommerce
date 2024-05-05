@@ -15,8 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
-    <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAioOfEybpNtA1Sbk4dI4DmS7-Y_zEq1lg&loading=async&libraries=places&callback=initMap">
+    <script async defer
+    src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}&loading=async&libraries=places&callback=initMap`}>
 </script>
 
 

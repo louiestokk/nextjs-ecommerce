@@ -1,35 +1,40 @@
 'use client'
 
 import { TextField } from '@mui/material';
-import React,{useState,useRef} from 'react'
+import React,{useState,useRef,useEffect} from 'react'
 import { BiSearch } from "react-icons/bi";
 import EditLocationIcon from '@mui/icons-material/EditLocation';
+let autocomplete
+
 const DeliveryOptions = () => {
-  const center = { lat: 50.064192, lng: -130.605469 };
-  // Create a bounding box with sides ~10km away from the center point
-  const defaultBounds = {
-    north: center.lat + 0.1,
-    south: center.lat - 0.1,
-    east: center.lng + 0.1,
-    west: center.lng - 0.1,
-  };
-  const input = document.querySelector(".pac-input");
-  const options = {
-    bounds: defaultBounds,
-    componentRestrictions: { country: "se" },
-    fields: ["address_components", "geometry", "icon", "name"],
-    strictBounds: false,
-  };
+
+  const initAutocomplete = ()=>{
+    autocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('autocomplete'),
+      {
+        types:['establishment'],
+        componentRestrictions:{'country':['SE']},
+        fields:['place_id','geometry','name']
+      }
+    )
+    autocomplete.addListener('place_changed',handleAddressChange)
+  }
   
   const handleAddressChange = ()=>{
-    const autocomplete = new google.maps.places.Autocomplete(input, options);
-    autocomplete.setFields(["place_id", "geometry", "name"]);
+   let place = autocomplete?.getPlace()
+   if(!place.geometry){
+    document.getElementById('autocomplete').placeholder = 'Sök adress'
+   }else{
+    document.getElementById('details').innerHTML = place.name
+   }
   }
-
+useEffect(()=>{
+initAutocomplete()
+},[])
   return (
     <div style={{display:'flex',alignItems:'center',border:'0.5px solid gray',width:'96%',borderRadius:'5px',padding:'0.9rem',margin:'0.5rem',color:'#3B3B3B'}}>
     <BiSearch style={{color:'gray',marginRight:'0.2rem'}}/>
-    <input onChange={handleAddressChange} className='pac-input' placeholder='Sök adress' />
+    <input onChange={handleAddressChange} id='autocomplete' placeholder='Sök adress' type='text'/>
     <EditLocationIcon style={{color:'green'}}/>
     </div>
 
