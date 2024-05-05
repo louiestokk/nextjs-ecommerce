@@ -1,4 +1,4 @@
-import '@styles/globals.css'
+import '../styles/globals.css'
 import '../components/NavComp'
 import Providers from '@redux/Providers';
 import NavComp from '../components/NavComp';
