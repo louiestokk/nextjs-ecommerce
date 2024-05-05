@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
+    <link rel="stylesheet" href="../styles/globals.css" />
     <script async defer
     src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}&loading=async&libraries=places&callback=initMap`}>
 </script>
