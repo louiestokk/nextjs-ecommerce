@@ -3,7 +3,7 @@
 import { TextField } from '@mui/material';
 import React,{useState,useRef,useEffect} from 'react'
 import { BiSearch } from "react-icons/bi";
-import EditLocationIcon from '@mui/icons-material/EditLocation';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 let autocomplete
 
 const DeliveryOptions = () => {
@@ -22,7 +22,7 @@ const DeliveryOptions = () => {
   
   const handleAddressChange = ()=>{
    let place = autocomplete?.getPlace()
-   if(!place.geometry){
+   if(!place?.geometry){
     document.getElementById('autocomplete').placeholder = 'Sök adress'
    }else{
     document.getElementById('details').innerHTML = place.name
@@ -34,8 +34,8 @@ initAutocomplete()
   return (
     <div style={{display:'flex',alignItems:'center',border:'0.5px solid gray',width:'96%',borderRadius:'5px',padding:'0.9rem',margin:'0.5rem',color:'#3B3B3B'}}>
     <BiSearch style={{color:'gray',marginRight:'0.2rem'}}/>
-    <input onChange={handleAddressChange} id='autocomplete' placeholder='Sök adress' type='text'/>
-    <EditLocationIcon style={{color:'green'}}/>
+    <input onChange={handleAddressChange} id='autocomplete' placeholder='Skriv in adress för leverans' type='text'/>
+    <LocalShippingIcon style={{color:'gray'}}/>
     </div>
 
   )
