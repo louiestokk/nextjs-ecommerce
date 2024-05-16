@@ -12,7 +12,7 @@ const DeliveryOptions = () => {
     autocomplete = new google.maps.places.Autocomplete(
       document.getElementById('autocomplete'),
       {
-        types:['establishment'],
+        types:['place_id','geometry','name'],
         componentRestrictions:{'country':['SE']},
         fields:['place_id','geometry','name']
       }

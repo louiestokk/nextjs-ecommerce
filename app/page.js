@@ -13,6 +13,8 @@ import NewProducts from '@components/NewProducts'
 import TopSeller from '@components/TopSeller'
 import Sunglasses from '@components/Sunglasses'
 import PopularCategories from '@components/PopularCategories'
+import 'dotenv/config'
+
 const Home = () => {
   const [categories, setCategories] = useState([])
 
