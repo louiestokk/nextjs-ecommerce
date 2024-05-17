@@ -16,8 +16,7 @@ const BetalningCheckout = async() => {
     }
   return (
     <div>
-    <h1>Betalning Checkout</h1>
-    <StripeCheckout clientSecret={paymentIntent.client_secret} cartItems={'passa in alla cart items'}/>
+    <StripeCheckout clientSecret={paymentIntent.client_secret} />
     </div>
   )
 }

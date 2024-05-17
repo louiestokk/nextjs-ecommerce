@@ -2,7 +2,7 @@
 
 import Stripe from "stripe";
 
-const stripe = new Stripe('sk_test_51PEbGPJvlojyjdfOU5dehYvc6CaNWMfXGZwQgJ66uVfXkuqJgXaLzv5DimmOQ651NqHLEZlYoCBoBjQUXs5wTPKG00aANUQe4T');
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const calculateOrderAmount = (items) => {
   // Replace this constant with a calculation of the order's amount
