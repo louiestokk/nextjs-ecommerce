@@ -1,9 +1,11 @@
+
 import React from 'react'
 import Stripe from 'stripe'
 import StripeCheckout from '../../components/StripeCheckout'
+import {Step,Stepper,StepLabel} from '@mui/material'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
-
+const stripe = new Stripe('sk_test_51PEbGPJvlojyjdfOU5dehYvc6CaNWMfXGZwQgJ66uVfXkuqJgXaLzv5DimmOQ651NqHLEZlYoCBoBjQUXs5wTPKG00aANUQe4T')
+const steps = ['Kassa', 'Leverans', 'Betalning']
 const BetalningCheckout = async() => {
 
    const paymentIntent = await stripe.paymentIntents.create({
@@ -16,7 +18,17 @@ const BetalningCheckout = async() => {
     }
   return (
     <div>
-    <StripeCheckout clientSecret={paymentIntent.client_secret} />
+    <div style={{margin:'1rem auto',padding:'0.5rem'}}>
+        <Stepper activeStep={2}>
+          {steps.map((step)=>(
+            <Step key={step}>
+              <StepLabel>{step}</StepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </div>
+ <StripeCheckout clientSecret={paymentIntent.client_secret} />
+  
     </div>
   )
 }
