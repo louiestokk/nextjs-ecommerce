@@ -6,7 +6,8 @@ import { Oval } from 'react-loader-spinner'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useRouter } from 'next/navigation';
 
-const AddressForm = ({title,setActiveStep,activeStep}) => {
+const AddressForm = ({title}) => {
+  const [activeStep, setActiveStep] = useState(0)
   const  router = useRouter()
   const [formIsValid, setformIsValid] = useState(false)
   const [errors, setErrors] = useState({}); 
