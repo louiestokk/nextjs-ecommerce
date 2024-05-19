@@ -30,25 +30,7 @@ const onApproveOrder = (data,actions) => {
     alert(`Transaction completed by ${name}`);
   });
 }
-//   const loadPaypal =async()=>{
-//     let paypal
-//     try {
-//       paypal = await loadScript({ clientId: process.env.REACT_APP_PAYPAL_CLIENT_ID,currency: "SEK"  });
-//   } catch (error) {
-//       console.error("failed to load the PayPal JS SDK script", error);
-//   }
-  
-//   if (paypal) {
-//       try {
-//           await paypal.Buttons().render("#paypal-container");
-//       } catch (error) {
-//           console.error("failed to render the PayPal Buttons", error);
-//       }
-//   }
-//   }
-//  useEffect(()=>{
-// loadPaypal()
-//  },[])
+
   return (
     <div id='paypal-container'>    
                     <PayPalButtons 

@@ -15,12 +15,11 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-html,
+
 body {
   width: auto !important;
   overflow-x: hidden !important;
@@ -515,4 +514,26 @@ transition: all 0.1s linear;
   padding: 20px;
   margin: 20px 0;
   box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%), 0 30px 60px -30px rgb(0 0 0 / 30%);
+}
+
+.auth-login-containner{
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 85%;
+  height: 35vh;
+  z-index: 99;
+  transition: all 0.3s linear;
+  z-index: 1000000;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem 1rem;
+}
+
+.show-auth{
+  transform: translateX(0);
+  transition: all 0.3s linear;
 }

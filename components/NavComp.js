@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars } from "react-icons/fa";
@@ -17,14 +18,20 @@ import { navMenuLinks } from '@utils/navlinks';
 import NavMenuItemCard from './NavMenuItemCard';
 import { useRouter } from 'next/navigation';
 import { Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import {dispatchUserCart} from '../redux/features/cart/cartSlice'
+
+
 const NavComp = () => {
   const  router = useRouter()
   const isUserLoggedIn = true;
   const [providers, setProviders] = useState(null)
-  const [toggleDropDown, setToggleDropDown] = useState(false)
+  const [showRegUser, setshowRegUser] = useState(true)
   const [userCart, setUserCart] = useState(null)
   const [showCart, setShowCart] = useState(false)
 const [showMenu, setShowMenu] = useState(false)
+
+const dispatch = useDispatch()
 
   const fetchProviders = async()=>{
     try {
@@ -39,6 +46,7 @@ const [showMenu, setShowMenu] = useState(false)
     try { 
       const cart = await commerce.cart.retrieve()
       setUserCart(cart)
+      dispatch(dispatchUserCart(cart))
     } catch (error) {
       console.log(error)
     }
@@ -47,6 +55,19 @@ const [showMenu, setShowMenu] = useState(false)
   useEffect(()=>{
 fetchCart()
   },[userCart])
+
+  useEffect(()=>{
+const setProvidersFuncktion = async()=>{
+  try {
+    const resp = await getProviders()
+    setProviders(resp)
+    console.log(resp)
+  } catch (error) {
+    console.log(error)
+  }
+}
+setProvidersFuncktion()
+  },[])
   return (
     <>
      <div className={`${showMenu? 'nav-menu-root show-nav-menu':'nav-menu-root'}`}>
@@ -116,7 +137,7 @@ fetchCart()
       </div>
 
         <div style={{display:'flex',alignItems:'center'}}>
-        <IconButton>
+        <IconButton onClick={()=>setshowRegUser(true)}>
         <FaRegUser />
         </IconButton>
         <IconButton aria-label='cart' onClick={()=> setShowCart(true)}>
@@ -126,66 +147,22 @@ fetchCart()
         </IconButton>
       
         </div>
-{/*    
-      <Link href='/' className='flex gap-2 flex-center'>
-        <p className='logo_text'>Louie & co</p>
-      </Link>
- 
-   <div className='flex relative'>
- 
-    {isUserLoggedIn ? <div className='flex'>
-    <Image 
-              src={'/assets/images/logo.svg'}
-              width={37}
-              height={37}
-              className='rounded-full'
-              alt='profile'
-              onClick={()=> setToggleDropDown((prev)=>(
-                !prev
-              ))}
-            />
-            {toggleDropDown&&  <div className='dropdown'>
-              <Link href='/account' className='dropdown_link' onClick={()=> setToggleDropDown(false)}>My Account</Link>
-              <Link href='/add-product' className='dropdown_link' onClick={()=> setToggleDropDown(false)}>Add Product</Link>
-              <button type='button' className='mt-5 w-full black_btn' onClick={()=>{
-                setToggleDropDown(false)
-                signOut()
-              }}>Sign Out</button>
-            </div>}
-          
-    </div>:     <>
-    {providers && Object.values(providers).map((provider=>(
-      <button type='button' key={provider.name} onClick={()=> signIn(provider.id)} className='black_btn'>
-        Sign In
-      </button>
-    ))) }
-        </>}
-   </div>
-  
-      <div className='sm:flex hidden'>
-        {isUserLoggedIn ? <div className='flex gap-3 md:gap-5'>
-          <Link href={'/add-product'} className='black_btn'>Add Product</Link>
-          <button type='button' onClick={signOut} className='outline_btn'>Sign Out</button>
-          <Link href='/profile'>
-            <Image 
-              src={'/assets/images/logo.svg'}
-              width={37}
-              height={37}
-              className='rounded-full'
-              alt='profile'
-            />
-          </Link>
-        </div>:
-        <>
-    {providers && Object.values(providers).map((provider=>(
-      <button type='button' key={provider.name} onClick={()=> signIn(provider.id)} className='black_btn'>
-        Sign In
-      </button>
-    ))) }
-        </>
-        }
-      </div> */}
+        {/*  */}
+        <div>
+         {providers && Object.values(providers).map((provider)=>(
+          <button type='button' key={provider.name} onClick={()=> signIn(provider.id)}>Sign In</button>
+         ))}
+        </div>
+        {/*  */}
     </nav>
+
+    <div className={showRegUser? 'auth-login-containner show-auth':'auth-login-containner'}>
+    <h2 style={{fontWeight:'bold',fontSize:'1.4rem',padding:'0.5rem'}}>Logga in</h2>
+    <p style={{padding:'0.5rem',fontSize:'0.9rem',color:'#3B3B3B'}}>Logga in för att ta del av dina medlemserbjudanden, orderhistorik och information om ditt medlemsskap.</p>
+  <Button variant='contained' style={{background:'black',color:'white',width:'70%',margin:'0.5rem 0.5rem'}}>Login</Button>
+  {/* <Button variant='contained' style={{background:'gray',color:'white',width:'70%',marginLeft:'0.5rem'}} onClick={signOut}>Logout</Button> */}
+  <Button variant='outlined' style={{border:'none',width:'70%',marginTop:'0.5rem',textDecoration:'underline'}}  onClick={()=>{}}>Bli medlem</Button>
+</div>
     </>
  
   )

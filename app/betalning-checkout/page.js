@@ -6,6 +6,7 @@ import {Step,Stepper,StepLabel} from '@mui/material'
 import CheckoutCartItems from '@components/CheckoutCartItems'
 const stripe = new Stripe('sk_test_51PEbGPJvlojyjdfOU5dehYvc6CaNWMfXGZwQgJ66uVfXkuqJgXaLzv5DimmOQ651NqHLEZlYoCBoBjQUXs5wTPKG00aANUQe4T')
 const steps = ['Kassa', 'Leverans', 'Betalning']
+
 const BetalningCheckout = async() => {
 
    const paymentIntent = await stripe.paymentIntents.create({

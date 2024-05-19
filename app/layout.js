@@ -1,10 +1,10 @@
-import '../styles/globals.css'
+import '@styles/globals.css'
 import '../components/NavComp'
 import Providers from '../redux/Providers';
 import NavComp from '../components/NavComp';
 import TopNav from '../components/TopNav';
 import FooterComp from '../components/FooterComp';
-
+import Provider from '@components/Provider';
 
 export const metadata = {
   title: "Fynda på nätet - Låga priser & snabb leverans",
@@ -17,15 +17,16 @@ export default function RootLayout({ children }) {
     <head>
     </head>
       <body>
+        <Providers>
+        <Provider>
       <TopNav color='white' background='#fd5c63' height=''/>
         <div className="app">
         <NavComp />
-        <Providers>
         {children}
-        </Providers>
-        
         </div>
           <FooterComp />
+          </Provider>
+        </Providers>
       </body>
     </html>
   );

@@ -10,11 +10,11 @@ export const cartSlice = createSlice({
     name:'cart',
     initialState,
     reducers:{
-        setUserCart:(state,payload)=>{
+        dispatchUserCart:(state,payload)=>{
             state.userCart=payload
         }
     }
 })
 
-export const {setUserCart} = cartSlice.actions
+export const {dispatchUserCart} = cartSlice.actions
 export default cartSlice.reducer

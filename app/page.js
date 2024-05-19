@@ -15,10 +15,11 @@ import Sunglasses from '@components/Sunglasses'
 import PopularCategories from '@components/PopularCategories'
 import 'dotenv/config'
 
+
 const Home = () => {
   const [categories, setCategories] = useState([])
-
 const dispatch = useDispatch()
+
   const fetchProducts = async()=>{
     try {
       dispatch(isLoading())
@@ -35,6 +36,8 @@ const dispatch = useDispatch()
   useEffect(()=>{
 fetchProducts()
   },[])
+
+
   return (
     <section className='home-root'>
      <Hero /> 

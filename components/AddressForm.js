@@ -24,7 +24,12 @@ const AddressForm = ({title}) => {
   })
 
   
+const scrollToElement = ()=>{
+  setTimeout(()=>{
+    document.querySelector('.leverans-postombud-title-last').scrollIntoView({behavior:'smooth'})
+  },1500)
 
+}
 
 const fetchPostNord =async()=>{
   try {
@@ -34,7 +39,6 @@ const fetchPostNord =async()=>{
     const {servicePointInformationResponse} = await serviceStallen.json()
     setservicePoints(servicePointInformationResponse.servicePoints)
     setFetching(false)
-    console.log(servicePointInformationResponse.servicePoints)
   } catch (error) {
     console.log(error)
   }
@@ -107,6 +111,7 @@ const fetchPostNord =async()=>{
               validateForm()
              fetchPostNord()
               {formIsValid && setActiveStep(1)}
+              scrollToElement()
             }}>Spara & fortsätt till leverans</Button>
         </form>
             {fetching && <div style={{marginTop:'2rem'}}> <Oval
@@ -118,7 +123,7 @@ const fetchPostNord =async()=>{
 /></div> }
 
 {servicePoints && <div style={{width:'100%',marginTop:'2rem'}}>
-<h2 style={{marginLeft:'1rem',marginTop:'1rem',fontSize:'1.1rem'}}>2. Leverans Postnord</h2>
+<h2 style={{marginLeft:'1rem',marginTop:'1rem',fontSize:'1.1rem'}} className='leverans-postombud-title-last'>2. Leverans Postnord</h2>
 <div style={{width:'100%', display:'flex',alignItems:'center',overflowX:'scroll'}}>
 {servicePoints.map((el,i)=>(
     <div key={i} style={{padding:'1rem'}}>
