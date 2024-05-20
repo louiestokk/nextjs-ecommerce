@@ -5,6 +5,7 @@ import NavComp from '../components/NavComp';
 import TopNav from '../components/TopNav';
 import FooterComp from '../components/FooterComp';
 import Provider from '@components/Provider';
+import Head from 'next/head';
 
 export const metadata = {
   title: "Fynda på nätet - Låga priser & snabb leverans",
@@ -14,9 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    <head>
+    <Head>
     <link rel="stylesheet" href="/styles/styles.css" type='text/css'></link>
-    </head>
+    </Head>
       <body>
         <Providers>
         <Provider>
