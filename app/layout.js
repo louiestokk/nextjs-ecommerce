@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
-    <link rel="stylesheet" href="../public/styles/styles.css"></link>
+    <link rel="stylesheet" href="../public/styles/styles.css" type='text/css'></link>
     </head>
       <body>
         <Providers>
