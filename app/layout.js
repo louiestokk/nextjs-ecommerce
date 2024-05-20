@@ -1,4 +1,4 @@
-import '@styles/globals.css'
+import '../public/styles/styles.css'
 import '../components/NavComp'
 import Providers from '../redux/Providers';
 import NavComp from '../components/NavComp';
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
     <head>
-    <link rel="stylesheet" href="../public/styles/styles.css" type='text/css'></link>
+    <link rel="stylesheet" href="/styles/styles.css" type='text/css'></link>
     </head>
       <body>
         <Providers>
