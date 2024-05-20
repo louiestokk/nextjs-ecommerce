@@ -1,11 +1,10 @@
-import '../public/styles/styles.css'
+import '@styles/globals.css';
 import '../components/NavComp'
 import Providers from '../redux/Providers';
 import NavComp from '../components/NavComp';
 import TopNav from '../components/TopNav';
 import FooterComp from '../components/FooterComp';
 import Provider from '@components/Provider';
-import Head from 'next/head';
 
 export const metadata = {
   title: "Fynda på nätet - Låga priser & snabb leverans",
@@ -15,9 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-    <Head>
-    <link rel="stylesheet" href="/styles/styles.css" type='text/css'></link>
-    </Head>
+   <head>
+   <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+   </head>
       <body>
         <Providers>
         <Provider>

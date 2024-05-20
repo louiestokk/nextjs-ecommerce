@@ -1,0 +1,15 @@
+[build]
+functions = "./functions"
+
+ [[plugins]]
+ package = "@netlify/plugin-functions-install-core"
+
+[[headers]]
+for = "/_next/static/*"
+[headers.values]
+Content-Type = "application/javascript"
+
+[[headers]]
+for = "/public/styles/*"
+[headers.values]
+Content-Type = "text/css"
