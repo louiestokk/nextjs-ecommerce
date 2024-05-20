@@ -151,8 +151,8 @@ setProvidersFuncktion()
     <div className={showRegUser? 'auth-login-containner show-auth':'auth-login-containner'}>
     <h2 style={{fontWeight:'bold',fontSize:'1.4rem',padding:'0.5rem'}}>Logga in</h2>
     <p style={{padding:'0.5rem',fontSize:'0.9rem',color:'#3B3B3B'}}>Logga in för att ta del av dina medlemserbjudanden, orderhistorik och information om ditt medlemsskap.</p>
-    {showRegUser && providers && Object.values(providers).map((provider)=>(
-          <Button  key={provider.name} type='button' variant='contained' style={{background:'black',color:'white',width:'70%',margin:'0.5rem 0.5rem'}} onClick={signIn(provider.id)}>Login</Button>
+    {showRegUser && providers && Object.values(providers).map((provider,i)=>(
+          <Button  key={i} type='button' variant='contained' style={{background:'black',color:'white',width:'70%',margin:'0.5rem 0.5rem'}} onClick={signIn(provider.id)}>Login</Button>
          ))}
 
   {/* <Button variant='contained' style={{background:'gray',color:'white',width:'70%',marginLeft:'0.5rem'}} onClick={signOut}>Logout</Button> */}

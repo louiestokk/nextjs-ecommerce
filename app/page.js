@@ -1,6 +1,5 @@
 'use client'
 
-import '../styles/globals.css'
 import React,{useState,useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import { isLoading,stopLoading } from '@redux/features/loading/loadingSlice'

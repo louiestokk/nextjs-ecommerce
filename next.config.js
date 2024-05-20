@@ -17,7 +17,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Ensuring correct MIME types for Next.js static files
         source: '/_next/static/:path*',
         headers: [
           {
@@ -27,8 +26,7 @@ const nextConfig = {
         ],
       },
       {
-        // Ensuring correct MIME types for CSS files
-        source: '/styles/:path*',
+        source: '/_next/static/css/:path*',
         headers: [
           {
             key: 'Content-Type',
