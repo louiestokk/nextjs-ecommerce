@@ -12,7 +12,7 @@ import XIcon from '@mui/icons-material/X';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import { FaCheck } from "react-icons/fa6";
-import Image from 'next/image';
+
 const FooterComp = () => {
     let year = new Date().getFullYear()
   return (

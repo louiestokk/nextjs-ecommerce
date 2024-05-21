@@ -1,3 +1,4 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
@@ -20,17 +21,8 @@ const nextConfig = {
         source: '/_next/static/:path*',
         headers: [
           {
-            key: 'Content-Type',
-            value: 'application/javascript',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/css/:path*',
-        headers: [
-          {
-            key: 'Content-Type',
-            value: 'text/css',
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
