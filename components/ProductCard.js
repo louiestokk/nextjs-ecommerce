@@ -34,7 +34,6 @@ const productReviws = [
 
 const ProductCard = ({product,width}) => {
   const router = useRouter()
-const randomNumber = Math.floor(Math.random()*5)
 const [addingToCart, setAddingToCart] = useState(false)
 const [productAdded, setProductAdded] = useState(false)
 
@@ -92,7 +91,7 @@ const handleRouting = (e) =>{
      </div>
      <div className='sold-today'>
      <BsFire className='fire'/>
-     <p>{randomNumber+1} sålda idag</p>
+     <p>4 sålda idag</p>
      </div>
      <div className='sold-today'>
       <BsTruck style={{color:'rgb(0, 131, 138)',marginTop:'0.2rem',fontSize:'1.1rem'}}/>
