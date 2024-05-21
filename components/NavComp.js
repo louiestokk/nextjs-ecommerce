@@ -57,17 +57,21 @@ const dispatch = useDispatch()
 fetchCart()
   },[userCart])
 
-  useEffect(()=>{
-const setProvidersFuncktion = async()=>{
-  try {
-    const resp = await getProviders()
-    setProviders(resp)
-  } catch (error) {
-    console.log(error)
+
+
+  const setProvidersFuncktion = async()=>{
+    try {
+      const resp = await getProviders()
+      setProviders(resp)
+    } catch (error) {
+      console.log(error)
+    }
   }
-}
+
+  useEffect(()=>{
 setProvidersFuncktion()
   },[])
+  
   return (
     <>
      <div className={`${showMenu? 'nav-menu-root show-nav-menu':'nav-menu-root'}`}>
