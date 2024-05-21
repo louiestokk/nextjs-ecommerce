@@ -1,0 +1,14 @@
+[[headers]]
+for = "/_next/static/*"
+[headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/_next/static/chunks/*"
+[headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/*"
+  to = "/solglasogon"
+  status = 200
