@@ -126,9 +126,9 @@ setProvidersFuncktion()
        }}>TILL KASSAN</Button>
        </div>
        <div style={{display:'flex',alignItems:'center',justifyContent:'space-evenly',marginTop:'0.75rem'}}>
-        <Image src={'/assets/images/visa.jpg'} width={50} height={50} alt='visa kort'/>
-        <Image src={'/assets/images/mastercard.jpg'} width={50} height={50} alt='visa kort'/>
-        <Image src={'/assets/images/logo_paypal.jpg'} width={50} height={50} alt='visa kort'/>
+        <Image  loading="lazy" src={'/assets/images/visa.jpg'} width={50} height={50} alt='visa kort'/>
+        <Image  loading="lazy" src={'/assets/images/mastercard.jpg'} width={50} height={50} alt='visa kort'/>
+        <Image  loading="lazy" src={'/assets/images/logo_paypal.jpg'} width={50} height={50} alt='visa kort'/>
        </div>
       </div>
          <nav style={{display:'flex',flexDirection:'row',justifyContent:'space-between',padding:'1rem',alignItems:'center'}}>
