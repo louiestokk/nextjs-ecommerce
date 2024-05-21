@@ -5,7 +5,7 @@ import NavComp from '../components/NavComp';
 import TopNav from '../components/TopNav';
 import FooterComp from '../components/FooterComp';
 import Provider from '@components/Provider';
-
+import Head from 'next/head';
 export const metadata = {
   title: "Fynda på nätet - Låga priser & snabb leverans",
   description: "Billig shopping på nätet. Tryggt, enkelt och billigt. Fynda bland tusentals produkter. Välkommen till .struts - Ditt online köpcenter!",
@@ -14,10 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-   <head>
+   <Head>
    <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-   </head>
+        <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
+   </Head>
       <body>
         <Providers>
         <Provider>
