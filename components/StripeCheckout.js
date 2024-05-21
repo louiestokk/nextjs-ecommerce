@@ -21,15 +21,6 @@ const [email, setEmail] = useState(null)
     if(stripe==null || elements == null) return
     setIsLoading(true)
 
-    const orderExists = await userOrderExits(email,cart?.line_items?.map((el)=> el?.id))
-    if(orderExists){
-      setErrorMessage('Du har redan köpt den här varan! Logga in och besök din ordersida')
-      setIsLoading(false)
-      return
-    }
-    // check for existing order
-
-
     stripe
     .confirmPayment({
       elements,
