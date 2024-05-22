@@ -36,10 +36,10 @@ const FooterComp = () => {
     <div>
     <p style={{fontWeight:'bold',marginTop:'1.8rem',marginBottom:'0.5rem'}}>Betalnigsalternativ</p>
     <div className='betalnings-alt'>
-      <img src='/assets/images/visa.jpg' alt='visa logo' className='payment-logo' />
-      <img src='/assets/images/mastercard.jpg' alt='mastercard logo' className='payment-logo' />
-      <img src='/assets/images/logo_paypal.jpg' alt='paypal logo' className='payment-logo' />
-      <img src='/assets/images/applepay.jpg' alt='paypal logo' className='payment-logo' style={{width:'110px'}}/>
+      <img loading='lazy' src='/assets/images/visa.jpg' alt='visa logo' className='payment-logo' />
+      <img loading='lazy' src='/assets/images/mastercard.jpg' alt='mastercard logo' className='payment-logo' />
+      <img loading='lazy' src='/assets/images/logo_paypal.jpg' alt='paypal logo' className='payment-logo' />
+      <img loading='lazy' src='/assets/images/applepay.jpg' alt='paypal logo' className='payment-logo' style={{width:'110px'}}/>
     </div>
     <div>
     <p style={{fontWeight:'bold',marginTop:'1.8rem',marginBottom:'0.5rem'}}>Trygg e-handel</p>

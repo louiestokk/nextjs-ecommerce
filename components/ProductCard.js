@@ -55,7 +55,7 @@ const handleRouting = (e) =>{
     <div className='rea-bubble'>
       <p>30%</p>
     </div>
-    <img src={`${product?.image?.url}`} alt={product?.name} className='product-img'/>
+    <img loading='lazy' src={`${product?.image?.url}`} alt={product?.name} className='product-img'/>
     <div>
     <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
     <p className='text-sm font-bold product-price'>{product?.price?.formatted_with_symbol}</p>

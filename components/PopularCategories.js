@@ -41,7 +41,7 @@ const PopularCategories = () => {
             {items.map((el,i)=>(
                 <Link key={i} href={el.path} style={{height:'95px',width:'calc(33.333% - 20px)',flex:'0 0 auto'}}>
                 <div style={{height:'58px',width:'58px',borderRadius:'50%',border:'1px #cecece solid',background:'#f6f6f6',display:'inline-flex',alignItems:'center',justifyContent:'center',marginBottom:'10px'}}>
-                <img src={el.image} alt={el.text} style={{height:'25px',width:'25px'}}/>
+                <img loading='lazy' src={el.image} alt={el.text} style={{height:'25px',width:'25px'}}/>
                 </div>
                     <p style={{fontSize:'11px',fontWeight:'700',textAlign:'center',color:'#000'}}>{el.text}</p>
                 </Link>
