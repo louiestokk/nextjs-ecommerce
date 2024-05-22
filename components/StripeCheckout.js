@@ -1,7 +1,7 @@
 'use client'
 
 import React,{useEffect,useState} from 'react'
-import { Elements,useStripe,useElements,PaymentElement,LinkAuthenticationElement,userOrderExits } from '@stripe/react-stripe-js'
+import { Elements,useStripe,useElements,PaymentElement,LinkAuthenticationElement } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
 import { Button } from '@mui/material'
 import { useSelector } from 'react-redux'
